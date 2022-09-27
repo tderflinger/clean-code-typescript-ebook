@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check-links:
+  build-and-deploy:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
       - name: Checkout
@@ -39,3 +39,8 @@ jobs:
 
       - name: Build ebook
         run: npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _book # The folder the action should deploy.
