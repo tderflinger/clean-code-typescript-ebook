@@ -1,18 +1,29 @@
 {
-  "name": "clean-typescript-ebook",
+  "name": "clean-code-typescript-ebook",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web ebook version of clean-code-typescript.",
   "main": "index.js",
   "scripts": {
     "serve": "honkit serve",
     "build": "honkit build",
+    "build:epub": "honkit epub ./ ./clean-typescript.epub",
     "build:pdf": "honkit pdf ./ ./clean-typescript.pdf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["typescript", "clean code", "ebook"],
+  "author": {
+    "name": "Thomas Derflinger",
+    "url": "https://www.tderflinger.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tderflinger/clean-code-typescript-ebook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tderflinger/clean-code-typescript-ebook/issues"
+  },
+  "license": "MIT",
   "devDependencies": {
-    "honkit": "^4.0.0"
+    "honkit": "4.0.0"
   }
 }
