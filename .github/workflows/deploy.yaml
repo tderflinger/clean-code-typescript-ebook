@@ -12,7 +12,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
   # Needed for the 'trilom/file-changes-action' action
   pull-requests: read
 
