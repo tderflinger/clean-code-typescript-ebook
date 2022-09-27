@@ -1,7 +1,7 @@
 # clean-code-typescript-ebook
 
 The is the ebook version of [clean-code-typescript](https://github.com/labs42io/clean-code-typescript).
-It uses Honkit to create a web version of the book.
+It uses [HonKit](https://honkit.netlify.app/) to create a web version of the book.
 
 ## Install
 

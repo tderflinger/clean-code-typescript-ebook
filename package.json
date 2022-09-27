@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "honkit serve",
+    "build": "honkit build",
     "build:pdf": "honkit pdf ./ ./clean-typescript.pdf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
