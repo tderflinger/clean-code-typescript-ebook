@@ -1,0 +1,529 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Error Handling · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="FORMATTING.html" />
+    
+    
+    <link rel="prev" href="CONCURRENCY.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objects and Data Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Error Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Comments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Translations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Error Handling</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="error-handling">Error Handling</h2>
+<p>Thrown errors are a good thing! They mean the runtime has successfully identified when something in your program has gone wrong and it&apos;s letting you know by stopping function
+execution on the current stack, killing the process (in Node), and notifying you in the console with a stack trace.</p>
+<h3 id="always-use-error-for-throwing-or-rejecting">Always use Error for throwing or rejecting</h3>
+<p>JavaScript as well as TypeScript allow you to <code>throw</code> any object. A Promise can also be rejected with any reason object.<br>It is advisable to use the <code>throw</code> syntax with an <code>Error</code> type. This is because your error might be caught in higher level code with a <code>catch</code> syntax.
+It would be very confusing to catch a string message there and would make
+<a href="https://basarat.gitbook.io/typescript/type-system/exceptions#always-use-error" target="_blank">debugging more painful</a>.<br>For the same reason you should reject promises with <code>Error</code> types.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateTotal</span>(<span class="hljs-params">items: Item[]</span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-string">&apos;Not implemented.&apos;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Item</span>[]&gt; </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-string">&apos;Not implemented.&apos;</span>);
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateTotal</span>(<span class="hljs-params">items: Item[]</span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Not implemented.&apos;</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Item</span>[]&gt; </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Not implemented.&apos;</span>));
+}
+
+<span class="hljs-comment">// or equivalent to:</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Item</span>[]&gt; </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Not implemented.&apos;</span>);
+}
+</code></pre>
+<p>The benefit of using <code>Error</code> types is that it is supported by the syntax <code>try/catch/finally</code> and implicitly all errors have the <code>stack</code> property which
+is very powerful for debugging.<br>There are also other alternatives, not to use the <code>throw</code> syntax and instead always return custom error objects. TypeScript makes this even easier.
+Consider the following example:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">type</span> Result&lt;R&gt; = { <span class="hljs-attr">isError</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">value</span>: R };
+<span class="hljs-keyword">type</span> Failure&lt;E&gt; = { <span class="hljs-attr">isError</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">error</span>: E };
+<span class="hljs-keyword">type</span> Failable&lt;R, E&gt; = Result&lt;R&gt; | Failure&lt;E&gt;;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculateTotal</span>(<span class="hljs-params">items: Item[]</span>): <span class="hljs-title">Failable</span>&lt;<span class="hljs-title">number</span>, &apos;<span class="hljs-title">empty</span>&apos;&gt; </span>{
+  <span class="hljs-keyword">if</span> (items.length === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">isError</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&apos;empty&apos;</span> };
+  }
+
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> { <span class="hljs-attr">isError</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">42</span> };
+}
+</code></pre>
+<p>For the detailed explanation of this idea refer to the <a href="https://medium.com/@dhruvrajvanshi/making-exceptions-type-safe-in-typescript-c4d200ee78e9" target="_blank">original post</a>.</p>
+<h3 id="dont-ignore-caught-errors">Don&apos;t ignore caught errors</h3>
+<p>Doing nothing with a caught error doesn&apos;t give you the ability to ever fix or react to said error. Logging the error to the console (<code>console.log</code>) isn&apos;t much better as often it can get lost in a sea of things printed to the console. If you wrap any bit of code in a <code>try/catch</code> it means you think an error may occur there and therefore you should have a plan, or create a code path, for when it occurs.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">try</span> {
+  functionThatMightThrow();
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-built_in">console</span>.log(error);
+}
+
+<span class="hljs-comment">// or even worse</span>
+
+<span class="hljs-keyword">try</span> {
+  functionThatMightThrow();
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-comment">// ignore error</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { logger } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./logging&apos;</span>
+
+<span class="hljs-keyword">try</span> {
+  functionThatMightThrow();
+} <span class="hljs-keyword">catch</span> (error) {
+  logger.log(error);
+}
+</code></pre>
+<h3 id="dont-ignore-rejected-promises">Don&apos;t ignore rejected promises</h3>
+<p>For the same reason you shouldn&apos;t ignore caught errors from <code>try/catch</code>.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts">getUser()
+  .then(<span class="hljs-function">(<span class="hljs-params">user: User</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> sendEmail(user.email, <span class="hljs-string">&apos;Welcome!&apos;</span>);
+  })
+  .catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(error);
+  });
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { logger } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./logging&apos;</span>
+
+getUser()
+  .then(<span class="hljs-function">(<span class="hljs-params">user: User</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> sendEmail(user.email, <span class="hljs-string">&apos;Welcome!&apos;</span>);
+  })
+  .catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    logger.log(error);
+  });
+
+<span class="hljs-comment">// or using the async/await syntax:</span>
+
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> getUser();
+  <span class="hljs-keyword">await</span> sendEmail(user.email, <span class="hljs-string">&apos;Welcome!&apos;</span>);
+} <span class="hljs-keyword">catch</span> (error) {
+  logger.log(error);
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CONCURRENCY.html" class="navigation navigation-prev " aria-label="Previous page: Concurrency">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="FORMATTING.html" class="navigation navigation-next " aria-label="Next page: Formatting">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Error Handling","level":"1.9","depth":1,"next":{"title":"Formatting","level":"1.10","depth":1,"path":"FORMATTING.md","ref":"./FORMATTING.md","articles":[]},"previous":{"title":"Concurrency","level":"1.8","depth":1,"path":"CONCURRENCY.md","ref":"./CONCURRENCY.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"ERROR-HANDLING.md","mtime":"2022-09-27T17:19:06.119Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T17:19:13.802Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

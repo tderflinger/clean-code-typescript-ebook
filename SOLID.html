@@ -1,0 +1,815 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>SOLID · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TESTING.html" />
+    
+    
+    <link rel="prev" href="CLASSES.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objects and Data Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Error Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Comments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Translations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SOLID</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="solid">SOLID</h2>
+<h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)</h3>
+<p>As stated in Clean Code, &quot;There should never be more than one reason for a class to change&quot;. It&apos;s tempting to jam-pack a class with a lot of functionality, like when you can only take one suitcase on your flight. The issue with this is that your class won&apos;t be conceptually cohesive and it will give it many reasons to change. Minimizing the amount of time you need to change a class is important. It&apos;s important because if too much functionality is in one class and you modify a piece of it, it can be difficult to understand how that will affect other dependent modules in your codebase.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSettings</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> user: User</span>)</span> {
+  }
+
+  <span class="hljs-function"><span class="hljs-title">changeSettings</span>(<span class="hljs-params">settings: UserSettings</span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.verifyCredentials()) {
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-title">verifyCredentials</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserAuth</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> user: User</span>)</span> {
+  }
+
+  <span class="hljs-function"><span class="hljs-title">verifyCredentials</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSettings</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> auth: UserAuth;
+
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> user: User</span>)</span> {
+    <span class="hljs-built_in">this</span>.auth = <span class="hljs-keyword">new</span> UserAuth(user);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">changeSettings</span>(<span class="hljs-params">settings: UserSettings</span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.auth.verifyCredentials()) {
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="openclosed-principle-ocp">Open/Closed Principle (OCP)</h3>
+<p>As stated by Bertrand Meyer, &quot;software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.&quot; What does that mean though? This principle basically states that you should allow users to add new functionalities without changing existing code.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AjaxAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpRequester</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> adapter: Adapter</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> fetch&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt; {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.adapter <span class="hljs-keyword">instanceof</span> AjaxAdapter) {
+      <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> makeAjaxCall&lt;T&gt;(url);
+      <span class="hljs-comment">// transform response and return</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.adapter <span class="hljs-keyword">instanceof</span> NodeAdapter) {
+      <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> makeHttpCall&lt;T&gt;(url);
+      <span class="hljs-comment">// transform response and return</span>
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAjaxCall</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">url: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-comment">// request and return promise</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeHttpCall</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">url: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-comment">// request and return promise</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">async</span> request&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt;;
+
+  <span class="hljs-comment">// code shared to subclasses ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AjaxAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  <span class="hljs-keyword">async</span> request&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt;{
+    <span class="hljs-comment">// request and return promise</span>
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  <span class="hljs-keyword">async</span> request&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt;{
+    <span class="hljs-comment">// request and return promise</span>
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpRequester</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> adapter: Adapter</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> fetch&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt; {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-built_in">this</span>.adapter.request&lt;T&gt;(url);
+    <span class="hljs-comment">// transform response and return</span>
+  }
+}
+</code></pre>
+<h3 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)</h3>
+<p>This is a scary term for a very simple concept. It&apos;s formally defined as &quot;If S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e., objects of type S may substitute objects of type T) without altering any of the desirable properties of that program (correctness, task performed, etc.).&quot; That&apos;s an even scarier definition.  </p>
+<p>The best explanation for this is if you have a parent class and a child class, then the parent class and child class can be used interchangeably without getting incorrect results. This might still be confusing, so let&apos;s take a look at the classic Square-Rectangle example. Mathematically, a square is a rectangle, but if you model it using the &quot;is-a&quot; relationship via inheritance, you quickly get into trouble.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">protected</span> width: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>,
+    <span class="hljs-keyword">protected</span> height: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span></span>)</span> {
+
+  }
+
+  setColor(color: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params">area: <span class="hljs-built_in">number</span></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  setWidth(width: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.width = width;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  setHeight(height: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.height = height;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  getArea(): <span class="hljs-built_in">number</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.width * <span class="hljs-built_in">this</span>.height;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rectangle</span> </span>{
+  setWidth(width: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.width = width;
+    <span class="hljs-built_in">this</span>.height = width;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  setHeight(height: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.width = height;
+    <span class="hljs-built_in">this</span>.height = height;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLargeRectangles</span>(<span class="hljs-params">rectangles: Rectangle[]</span>) </span>{
+  rectangles.forEach(<span class="hljs-function">(<span class="hljs-params">rectangle</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> area = rectangle
+      .setWidth(<span class="hljs-number">4</span>)
+      .setHeight(<span class="hljs-number">5</span>)
+      .getArea(); <span class="hljs-comment">// BAD: Returns 25 for Square. Should be 20.</span>
+    rectangle.render(area);
+  });
+}
+
+<span class="hljs-keyword">const</span> rectangles = [<span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Square()];
+renderLargeRectangles(rectangles);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span> </span>{
+  setColor(color: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params">area: <span class="hljs-built_in">number</span></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">abstract</span> getArea(): <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Shape</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> width = <span class="hljs-number">0</span>,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> height = <span class="hljs-number">0</span></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  getArea(): <span class="hljs-built_in">number</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.width * <span class="hljs-built_in">this</span>.height;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Shape</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> length: <span class="hljs-built_in">number</span></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+  }
+
+  getArea(): <span class="hljs-built_in">number</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.length * <span class="hljs-built_in">this</span>.length;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLargeShapes</span>(<span class="hljs-params">shapes: Shape[]</span>) </span>{
+  shapes.forEach(<span class="hljs-function">(<span class="hljs-params">shape</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> area = shape.getArea();
+    shape.render(area);
+  });
+}
+
+<span class="hljs-keyword">const</span> shapes = [<span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Square(<span class="hljs-number">5</span>)];
+renderLargeShapes(shapes);
+</code></pre>
+<h3 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)</h3>
+<p>ISP states that &quot;Clients should not be forced to depend upon interfaces that they do not use.&quot;. This principle is very much related to the Single Responsibility Principle.
+What it really means is that you should always design your abstractions in a way that the clients that are using the exposed methods do not get the whole pie instead. That also include imposing the clients with the burden of implementing methods that they don’t actually need.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> SmartPrinter {
+  print();
+  fax();
+  scan();
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllInOnePrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">SmartPrinter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }  
+
+  <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">scan</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EconomicPrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">SmartPrinter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }  
+
+  <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Fax not supported.&apos;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">scan</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Scan not supported.&apos;</span>);
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Printer {
+  print();
+}
+
+<span class="hljs-keyword">interface</span> Fax {
+  fax();
+}
+
+<span class="hljs-keyword">interface</span> Scanner {
+  scan();
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllInOnePrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">Printer</span>, <span class="hljs-title">Fax</span>, <span class="hljs-title">Scanner</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }  
+
+  <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">scan</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EconomicPrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">Printer</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<h3 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)</h3>
+<p>This principle states two essential things:</p>
+<ol>
+<li><p>High-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
+</li>
+<li><p>Abstractions should not depend upon details. Details should depend on abstractions.</p>
+</li>
+</ol>
+<p>This can be hard to understand at first, but if you&apos;ve worked with Angular, you&apos;ve seen an implementation of this principle in the form of Dependency Injection (DI). While they are not identical concepts, DIP keeps high-level modules from knowing the details of its low-level modules and setting them up. It can accomplish this through DI. A huge benefit of this is that it reduces the coupling between modules. Coupling is a very bad development pattern because it makes your code hard to refactor.  </p>
+<p>DIP is usually achieved by a using an inversion of control (IoC) container. An example of a powerful IoC container for TypeScript is <a href="https://www.npmjs.com/package/inversify" target="_blank">InversifyJs</a></p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { readFile <span class="hljs-keyword">as</span> readFileCb } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
+<span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
+
+<span class="hljs-keyword">const</span> readFile = promisify(readFileCb);
+
+<span class="hljs-keyword">type</span> ReportData = {
+  <span class="hljs-comment">// ..</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XmlFormatter</span> </span>{
+  parse&lt;T&gt;(content: <span class="hljs-built_in">string</span>): T {
+    <span class="hljs-comment">// Converts an XML string to an object T</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReportReader</span> </span>{
+
+  <span class="hljs-comment">// BAD: We have created a dependency on a specific request implementation.</span>
+  <span class="hljs-comment">// We should just have ReportReader depend on a parse method: `parse`</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> formatter = <span class="hljs-keyword">new</span> XmlFormatter();
+
+  <span class="hljs-keyword">async</span> read(path: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;ReportData&gt; {
+    <span class="hljs-keyword">const</span> text = <span class="hljs-keyword">await</span> readFile(path, <span class="hljs-string">&apos;UTF8&apos;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.formatter.parse&lt;ReportData&gt;(text);
+  }
+}
+
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader();
+<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { readFile <span class="hljs-keyword">as</span> readFileCb } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
+<span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
+
+<span class="hljs-keyword">const</span> readFile = promisify(readFileCb);
+
+<span class="hljs-keyword">type</span> ReportData = {
+  <span class="hljs-comment">// ..</span>
+}
+
+<span class="hljs-keyword">interface</span> Formatter {
+  parse&lt;T&gt;(content: <span class="hljs-built_in">string</span>): T;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XmlFormatter</span> <span class="hljs-title">implements</span> <span class="hljs-title">Formatter</span> </span>{
+  parse&lt;T&gt;(content: <span class="hljs-built_in">string</span>): T {
+    <span class="hljs-comment">// Converts an XML string to an object T</span>
+  }
+}
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JsonFormatter</span> <span class="hljs-title">implements</span> <span class="hljs-title">Formatter</span> </span>{
+  parse&lt;T&gt;(content: <span class="hljs-built_in">string</span>): T {
+    <span class="hljs-comment">// Converts a JSON string to an object T</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReportReader</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> formatter: Formatter</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> read(path: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;ReportData&gt; {
+    <span class="hljs-keyword">const</span> text = <span class="hljs-keyword">await</span> readFile(path, <span class="hljs-string">&apos;UTF8&apos;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.formatter.parse&lt;ReportData&gt;(text);
+  }
+}
+
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader(<span class="hljs-keyword">new</span> XmlFormatter());
+<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
+
+<span class="hljs-comment">// or if we had to read a json report</span>
+<span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader(<span class="hljs-keyword">new</span> JsonFormatter());
+<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.json&apos;</span>);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CLASSES.html" class="navigation navigation-prev " aria-label="Previous page: Classes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TESTING.html" class="navigation navigation-next " aria-label="Next page: Testing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SOLID","level":"1.6","depth":1,"next":{"title":"Testing","level":"1.7","depth":1,"path":"TESTING.md","ref":"./TESTING.md","articles":[]},"previous":{"title":"Classes","level":"1.5","depth":1,"path":"CLASSES.md","ref":"./CLASSES.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"SOLID.md","mtime":"2022-09-27T17:19:06.119Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T17:19:13.802Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
