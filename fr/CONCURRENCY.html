@@ -1,9 +1,9 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
-        <title>Concurrency · Clean Code TypeScript</title>
+        <title>Opérations Concurrentes · Clean Code TypeScript</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.0">
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="ERROR-HANDLING.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -287,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Concurrency</a>
+        <a href="." >Opérations Concurrentes</a>
     </h1>
 </div>
 
@@ -302,11 +302,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="concurrency">Concurrency</h2>
-<h3 id="prefer-promises-vs-callbacks">Prefer promises vs callbacks</h3>
-<p>Callbacks aren&apos;t clean, and they cause excessive amounts of nesting <em>(the callback hell)</em>.<br>There are utilities that transform existing functions using the callback style to a version that returns promises
-(for Node.js see <a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank"><code>util.promisify</code></a>, for general purpose see <a href="https://www.npmjs.com/package/pify" target="_blank">pify</a>, <a href="https://www.npmjs.com/package/es6-promisify" target="_blank">es6-promisify</a>)</p>
-<p><strong>Bad:</strong></p>
+                                <h2 id="opérations-concurrentes">Opérations Concurrentes</h2>
+<h3 id="préférer-les-promesses-aux-callbacks">Préférer les promesses aux &quot;callbacks&quot;</h3>
+<p>Les callbacks ne sont pas propres et provoquent des quantités excessives
+d&apos;imbrication <em>(l&apos;enfer des callbacks)</em>. Il existe des utilitaires qui transforment
+les fonctions existantes en utilisant le style du callback en une version qui renvoie
+des promesses (pour Node.js,
+voir <a href="https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original" target="_blank"><code>util.promisify</code></a>,
+pour un usage général, voir <a href="https://www.npmjs.com/package/pify" target="_blank">pify</a>, <a href="https://www.npmjs.com/package/es6-promisify" target="_blank">es6-promisify</a>)</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;request&apos;</span>;
 <span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 
@@ -334,7 +338,7 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
   }
 });
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;request&apos;</span>;
 <span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
@@ -350,37 +354,42 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
   .then(<span class="hljs-function"><span class="hljs-params">content</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(content))
   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(error));
 </code></pre>
-<p>Promises supports a few helper methods that help make code more concise:  </p>
+<p>Les promesses prennent en charge quelques méthodes d&apos;assistance qui aident à rendre le code plus concis:</p>
 <table>
 <thead>
 <tr>
-<th>Pattern</th>
+<th>Modèle</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Promise.resolve(value)</code></td>
-<td>Convert a value into a resolved promise.</td>
+<td>Convertit une valeur en promesse résolue.</td>
 </tr>
 <tr>
 <td><code>Promise.reject(error)</code></td>
-<td>Convert an error into a rejected promise.</td>
+<td>Convertit une erreur en une promesse rejetée.</td>
 </tr>
 <tr>
 <td><code>Promise.all(promises)</code></td>
-<td>Returns a new promise which is fulfilled with an array of fulfillment values for the passed promises or rejects with the reason of the first promise that rejects.</td>
+<td>Renvoie une nouvelle promesse qui est remplie avec un tableau de valeurs de réalisation pour les promesses ou les refus passés avec la raison de la première promesse qui rejette.</td>
 </tr>
 <tr>
 <td><code>Promise.race(promises)</code></td>
-<td>Returns a new promise which is fulfilled/rejected with the result/error of the first settled promise from the array of passed promises.</td>
+<td>Renvoie une nouvelle promesse qui est remplie/rejetée avec le résultat/l&apos;erreur de la première promesse réglée à partir du tableau des promesses passées.</td>
 </tr>
 </tbody>
 </table>
-<p><code>Promise.all</code> is especially useful when there is a need to run tasks in parallel. <code>Promise.race</code> makes it easier to implement things like timeouts for promises.</p>
-<h3 id="asyncawait-are-even-cleaner-than-promises">Async/Await are even cleaner than Promises</h3>
-<p>With <code>async</code>/<code>await</code> syntax you can write code that is far cleaner and more understandable than chained promises. Within a function prefixed with <code>async</code> keyword, you have a way to tell the JavaScript runtime to pause the execution of code on the <code>await</code> keyword (when used on a promise).</p>
-<p><strong>Bad:</strong></p>
+<p><code>Promise.all</code> est particulièrement utile lorsqu&apos;il est nécessaire d&apos;exécuter
+des tâches en parallèle. <code>Promise.race</code> facilite l&apos;implémentation de choses comme
+les délais d&apos;attente pour les promesses.</p>
+<h3 id="asyncawait-sont-encore-plus-propres-que-les-promesses">Async/Await sont encore plus propres que les promesses</h3>
+<p>Avec la syntaxe <code>async</code>/<code>await</code>, vous pouvez écrire du code beaucoup plus propre et
+plus compréhensible que les promesses enchaînées. Dans une fonction préfixée par
+le mot clé <code>async</code>, vous avez un moyen de dire au runtime de JavaScript de suspendre
+l&apos;exécution du code sur le mot clé<code>await</code> (lorsqu&apos;il est utilisé sur une promesse).</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;request&apos;</span>;
 <span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
@@ -395,22 +404,22 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
   .then(<span class="hljs-function"><span class="hljs-params">content</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(content))
   .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(error));
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;request&apos;</span>;
 <span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
 
 <span class="hljs-keyword">const</span> write = promisify(writeFile);
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadPage</span>(<span class="hljs-params">url: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadPage</span>(<span class="hljs-params">url: <span class="hljs-built_in">string</span>, saveTo: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
   <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> get(url);
+  <span class="hljs-keyword">await</span> write(saveTo, response);
   <span class="hljs-keyword">return</span> response;
 }
 
 <span class="hljs-comment">// somewhere in an async function</span>
 <span class="hljs-keyword">try</span> {
-  <span class="hljs-keyword">const</span> content = <span class="hljs-keyword">await</span> downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&apos;</span>);
-  <span class="hljs-keyword">await</span> write(<span class="hljs-string">&apos;article.html&apos;</span>, content);
+  <span class="hljs-keyword">const</span> content = <span class="hljs-keyword">await</span> downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&apos;</span>, <span class="hljs-string">&apos;article.html&apos;</span>);
   <span class="hljs-built_in">console</span>.log(content);
 } <span class="hljs-keyword">catch</span> (error) {
   <span class="hljs-built_in">console</span>.error(error);
@@ -443,12 +452,12 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
 
             
                 
-                <a href="TESTING.html" class="navigation navigation-prev " aria-label="Previous page: Testing">
+                <a href="TESTING.html" class="navigation navigation-prev " aria-label="Previous page: Tests">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ERROR-HANDLING.html" class="navigation navigation-next " aria-label="Next page: Error Handling">
+                <a href="ERROR-HANDLING.html" class="navigation navigation-next " aria-label="Next page: Gestion des erreurs">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -459,7 +468,7 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Concurrency","level":"1.8","depth":1,"next":{"title":"Error Handling","level":"1.9","depth":1,"path":"ERROR-HANDLING.md","ref":"./ERROR-HANDLING.md","articles":[]},"previous":{"title":"Testing","level":"1.7","depth":1,"path":"TESTING.md","ref":"./TESTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"CONCURRENCY.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Opérations Concurrentes","level":"1.8","depth":1,"next":{"title":"Gestion des erreurs","level":"1.9","depth":1,"path":"ERROR-HANDLING.md","ref":"./ERROR-HANDLING.md","articles":[]},"previous":{"title":"Tests","level":"1.7","depth":1,"path":"TESTING.md","ref":"./TESTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"CONCURRENCY.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -509,27 +518,27 @@ downloadPage(<span class="hljs-string">&apos;https://en.wikipedia.org/wiki/Rober
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

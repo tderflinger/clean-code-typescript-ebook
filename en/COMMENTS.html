@@ -1,0 +1,541 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Comments · Clean Code TypeScript</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TRANSLATIONS.html" />
+    
+    
+    <link rel="prev" href="FORMATTING.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objects and Data Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Error Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Comments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Translations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Comments</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="comments">Comments</h2>
+<p>The use of a comments is an indication of failure to express without them. Code should be the only source of truth.</p>
+<blockquote>
+<p>Don’t comment bad code—rewrite it.<br>— <em>Brian W. Kernighan and P. J. Plaugher</em></p>
+</blockquote>
+<h3 id="prefer-self-explanatory-code-instead-of-comments">Prefer self explanatory code instead of comments</h3>
+<p>Comments are an apology, not a requirement. Good code <em>mostly</em> documents itself.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-comment">// Check if subscription is active.</span>
+<span class="hljs-keyword">if</span> (subscription.endDate &gt; <span class="hljs-built_in">Date</span>.now) {  }
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> isSubscriptionActive = subscription.endDate &gt; <span class="hljs-built_in">Date</span>.now;
+<span class="hljs-keyword">if</span> (isSubscriptionActive) { <span class="hljs-comment">/* ... */</span> }
+</code></pre>
+<h3 id="dont-leave-commented-out-code-in-your-codebase">Don&apos;t leave commented out code in your codebase</h3>
+<p>Version control exists for a reason. Leave old code in your history.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">type</span> User = {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  email: <span class="hljs-built_in">string</span>;
+  <span class="hljs-comment">// age: number;</span>
+  <span class="hljs-comment">// jobPosition: string;</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">type</span> User = {
+  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+  email: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<h3 id="dont-have-journal-comments">Don&apos;t have journal comments</h3>
+<p>Remember, use version control! There&apos;s no need for dead code, commented code, and especially journal comments. Use <code>git log</code> to get history!</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-comment">/**
+ * 2016-12-20: Removed monads, didn&apos;t understand them (RM)
+ * 2016-10-01: Improved using special monads (JP)
+ * 2016-02-03: Added type-checking (LI)
+ * 2015-03-14: Implemented combine (JR)
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<h3 id="avoid-positional-markers">Avoid positional markers</h3>
+<p>They usually just add noise. Let the functions and variable names along with the proper indentation and formatting give the visual structure to your code.<br>Most IDE support code folding feature that allows you to collapse/expand blocks of code (see Visual Studio Code <a href="https://code.visualstudio.com/updates/v1_17#_folding-regions" target="_blank">folding regions</a>).</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">// Client class</span>
+<span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
+  name: <span class="hljs-built_in">string</span>;
+  address: Address;
+  contact: Contact;
+
+  <span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+  <span class="hljs-comment">// public methods</span>
+  <span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+  <span class="hljs-keyword">public</span> describe(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+  <span class="hljs-comment">// private methods</span>
+  <span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+  <span class="hljs-keyword">private</span> describeAddress(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> describeContact(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+};
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
+  name: <span class="hljs-built_in">string</span>;
+  address: Address;
+  contact: Contact;
+
+  <span class="hljs-keyword">public</span> describe(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> describeAddress(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> describeContact(): <span class="hljs-built_in">string</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+};
+</code></pre>
+<h3 id="todo-comments">TODO comments</h3>
+<p>When you find yourself that you need to leave notes in the code for some later improvements,
+do that using <code>// TODO</code> comments. Most IDE have special support for those kinds of comments so that
+you can quickly go over the entire list of todos.  </p>
+<p>Keep in mind however that a <em>TODO</em> comment is not an excuse for bad code. </p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveSubscriptions</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Subscription</span>[]&gt; </span>{
+  <span class="hljs-comment">// ensure `dueDate` is indexed.</span>
+  <span class="hljs-keyword">return</span> db.subscriptions.find({ <span class="hljs-attr">dueDate</span>: { <span class="hljs-attr">$lte</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() } });
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveSubscriptions</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Subscription</span>[]&gt; </span>{
+  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> ensure `dueDate` is indexed.</span>
+  <span class="hljs-keyword">return</span> db.subscriptions.find({ <span class="hljs-attr">dueDate</span>: { <span class="hljs-attr">$lte</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() } });
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FORMATTING.html" class="navigation navigation-prev " aria-label="Previous page: Formatting">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TRANSLATIONS.html" class="navigation navigation-next " aria-label="Next page: Translations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Comments","level":"1.11","depth":1,"next":{"title":"Translations","level":"1.12","depth":1,"path":"TRANSLATIONS.md","ref":"./TRANSLATIONS.md","articles":[]},"previous":{"title":"Formatting","level":"1.10","depth":1,"path":"FORMATTING.md","ref":"./FORMATTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"en","gitbook":"*"},"file":{"path":"COMMENTS.md","mtime":"2022-10-28T19:57:44.198Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

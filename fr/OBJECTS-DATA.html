@@ -1,0 +1,596 @@
+
+<!DOCTYPE HTML>
+<html lang="fr" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Objets et Structures de Données · Clean Code TypeScript</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CLASSES.html" />
+    
+    
+    <link rel="prev" href="FUNCTIONS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Tapez pour rechercher" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Fonctions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objets et Structures de Données
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Opérations Concurrentes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Gestion des erreurs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatage du Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Commentaires
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Traductions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    Licence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Publié avec HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Objets et Structures de Données</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="objets-et-structures-de-données">Objets et Structures de Données</h2>
+<h3 id="utiliser-des-getters-et-setters">Utiliser des &quot;getters&quot; et &quot;setters&quot;</h3>
+<p>TypeScript supporte la syntaxe getter/setter.</p>
+<p>L&apos;utilisation de getters et de setters pour accéder aux données d&apos;objets qui
+englobent le comportement pourrait être meilleure que la simple recherche d&apos;un
+attribut sur un objet. &quot;Pourquoi?&quot; vous vous demander. Eh bien, voici une liste de raisons:</p>
+<ul>
+<li>Lorsque vous voulez faire plus que d&apos;obtenir l’attribut d&apos;un objet, vous n&apos;avez
+pas besoin de rechercher et de modifier chaque accesseur dans votre base de code.</li>
+<li>Valide de façon plus simple en utilisant le mot-clé <code>set</code>.</li>
+<li>Encapsule la représentation interne.</li>
+<li>Facile à ajouter un log des activités et la gestion des erreurs.</li>
+<li>Vous pouvez paresseusement charger les attributs de votre objet, disons l&apos;obtenir
+à partir d&apos;un serveur.</li>
+</ul>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">type</span> BankAccount = {
+  <span class="hljs-attr">balance</span>: <span class="hljs-built_in">number</span>;
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> value = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">const</span> account: BankAccount = {
+  <span class="hljs-attr">balance</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-keyword">if</span> (value &lt; <span class="hljs-number">0</span>) {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Cannot set negative balance.&apos;</span>);
+}
+
+account.balance = value;
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BankAccount</span> </span>{
+  <span class="hljs-keyword">private</span> accountBalance: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">get</span> <span class="hljs-title">balance</span>(): <span class="hljs-title">number</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.accountBalance;
+  }
+
+  <span class="hljs-keyword">set</span> <span class="hljs-title">balance</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-keyword">if</span> (value &lt; <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Cannot set negative balance.&apos;</span>);
+    }
+
+    <span class="hljs-built_in">this</span>.accountBalance = value;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// Now `BankAccount` encapsulates the validation logic.</span>
+<span class="hljs-comment">// If one day the specifications change, and we need extra validation rule,</span>
+<span class="hljs-comment">// we would have to alter only the `setter` implementation,</span>
+<span class="hljs-comment">// leaving all dependent code unchanged.</span>
+<span class="hljs-keyword">const</span> account = <span class="hljs-keyword">new</span> BankAccount();
+account.balance = <span class="hljs-number">100</span>;
+</code></pre>
+<h3 id="faire-en-sorte-que-les-objets-aient-des-membres-privésprotégés">Faire en sorte que les objets aient des membres privés/protégés</h3>
+<p>TypeScript prend en charge les accesseurs <code>public</code> <em>(par défaut)</em>, <code>protected</code>
+et <code>private</code> sur les membres de la classe.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> </span>{
+  <span class="hljs-attr">radius</span>: <span class="hljs-built_in">number</span>;
+
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">radius: <span class="hljs-built_in">number</span></span>)</span> {
+    <span class="hljs-built_in">this</span>.radius = radius;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">perimeter</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">this</span>.radius;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">surface</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">this</span>.radius * <span class="hljs-built_in">this</span>.radius;
+  }
+}
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> radius: <span class="hljs-built_in">number</span></span>)</span> {
+  }
+
+  <span class="hljs-function"><span class="hljs-title">perimeter</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">this</span>.radius;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">surface</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * <span class="hljs-built_in">this</span>.radius * <span class="hljs-built_in">this</span>.radius;
+  }
+}
+</code></pre>
+<h3 id="préférer-limmuabilité">Préférer l&apos;immuabilité</h3>
+<p>Le système de types de TypeScript vous permet de marquer des attributs individuels
+sur une interface/classe comme <em>readonly</em>. Cela vous permet de travailler de manière
+fonctionnelle (une mutation inattendue est mauvaise). Pour les scénarios plus avancés,
+il existe un type intégré <code>Readonly</code> qui prend un type<code>T</code> et marque toutes ses
+attributs comme étant “readonly” à l&apos;aide de types mappés
+(voir <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types" target="_blank">mapped types ou &quot;types mappés&quot;</a>).</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Config {
+  <span class="hljs-attr">host</span>: <span class="hljs-built_in">string</span>;
+  port: <span class="hljs-built_in">string</span>;
+  db: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Config {
+  <span class="hljs-keyword">readonly</span> host: <span class="hljs-built_in">string</span>;
+  <span class="hljs-keyword">readonly</span> port: <span class="hljs-built_in">string</span>;
+  <span class="hljs-keyword">readonly</span> db: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<p>Dans le cas des tableaux, vous pouvez créer un tableau de <em>readonly</em> en utilisant
+<code>ReadonlyArray&lt;T&gt;</code>.
+N&apos;autorisez pas les modifications telles que <code>push()</code> et <code>fill()</code>, mais plutôt
+utilisez des fonctionnalités telles que <code>concat()</code> et <code>slice()</code> vu que celles-ci
+ne modifient pas la valeur.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> array: <span class="hljs-built_in">number</span>[] = [ <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span> ];
+array = []; <span class="hljs-comment">// error</span>
+array.push(<span class="hljs-number">100</span>); <span class="hljs-comment">// array will updated</span>
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> array: ReadonlyArray&lt;<span class="hljs-built_in">number</span>&gt; = [ <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span> ];
+array = []; <span class="hljs-comment">// error</span>
+array.push(<span class="hljs-number">100</span>); <span class="hljs-comment">// error</span>
+</code></pre>
+<p>Déclarer des paramètres de type &quot;read-only&quot; dans <a href="https://github.com/microsoft/TypeScript/wiki/What&apos;s-new-in-TypeScript#improvements-for-readonlyarray-and-readonly-tuples" target="_blank">TypeScript 3.4 est un peu plus facile</a>.</p>
+<pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hoge</span>(<span class="hljs-params">args: <span class="hljs-keyword">readonly</span> <span class="hljs-built_in">string</span>[]</span>) </span>{
+  args.push(<span class="hljs-number">1</span>); <span class="hljs-comment">// error</span>
+}
+</code></pre>
+<p>Préférer les <a href="https://github.com/microsoft/TypeScript/wiki/What&apos;s-new-in-TypeScript#const-assertions" target="_blank">assertions &quot;const&quot;</a>
+pour des valeurs littérales.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">hello</span>: <span class="hljs-string">&apos;world&apos;</span>
+};
+config.hello = <span class="hljs-string">&apos;world&apos;</span>; <span class="hljs-comment">// value is changed</span>
+
+<span class="hljs-keyword">const</span> array  = [ <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span> ];
+array[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>; <span class="hljs-comment">// value is changed</span>
+
+<span class="hljs-comment">// writable objects is returned</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">readonlyData</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) </span>{
+  <span class="hljs-keyword">return</span> { value };
+}
+
+<span class="hljs-keyword">const</span> result = readonlyData(<span class="hljs-number">100</span>);
+result.value = <span class="hljs-number">200</span>; <span class="hljs-comment">// value is changed</span>
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-comment">// read-only object</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">hello</span>: <span class="hljs-string">&apos;world&apos;</span>
+} <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>;
+config.hello = <span class="hljs-string">&apos;world&apos;</span>; <span class="hljs-comment">// error</span>
+
+<span class="hljs-comment">// read-only array</span>
+<span class="hljs-keyword">const</span> array  = [ <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span> ] <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>;
+array[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>; <span class="hljs-comment">// error</span>
+
+<span class="hljs-comment">// You can return read-only objects</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">readonlyData</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) </span>{
+  <span class="hljs-keyword">return</span> { value } <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>;
+}
+
+<span class="hljs-keyword">const</span> result = readonlyData(<span class="hljs-number">100</span>);
+result.value = <span class="hljs-number">200</span>; <span class="hljs-comment">// error</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FUNCTIONS.html" class="navigation navigation-prev " aria-label="Previous page: Fonctions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CLASSES.html" class="navigation navigation-next " aria-label="Next page: Classes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Objets et Structures de Données","level":"1.4","depth":1,"next":{"title":"Classes","level":"1.5","depth":1,"path":"CLASSES.md","ref":"./CLASSES.md","articles":[]},"previous":{"title":"Fonctions","level":"1.3","depth":1,"path":"FUNCTIONS.md","ref":"./FUNCTIONS.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"OBJECTS-DATA.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

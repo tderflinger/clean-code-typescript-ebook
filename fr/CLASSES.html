@@ -1,0 +1,674 @@
+
+<!DOCTYPE HTML>
+<html lang="fr" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Classes · Clean Code TypeScript</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="SOLID.html" />
+    
+    
+    <link rel="prev" href="OBJECTS-DATA.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Tapez pour rechercher" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Fonctions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objets et Structures de Données
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Opérations Concurrentes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Gestion des erreurs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatage du Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Commentaires
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Traductions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    Licence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Publié avec HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Classes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="classes">Classes</h2>
+<h3 id="les-classes-doivent-être-petites">Les classes doivent être petites</h3>
+<p>La taille de la classe est mesurée par sa responsabilité. Suivant le
+<em>Principe de Responsabilité Unique</em>, une classe doit être petite.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dashboard</span> </span>{
+  getLanguage(): <span class="hljs-built_in">string</span> { <span class="hljs-comment">/* ... */</span> }
+  setLanguage(language: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  showProgress(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  hideProgress(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  isDirty(): <span class="hljs-built_in">boolean</span> { <span class="hljs-comment">/* ... */</span> }
+  disable(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  enable(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  addSubscription(subscription: Subscription): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  removeSubscription(subscription: Subscription): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  addUser(user: User): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  removeUser(user: User): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  goToHomePage(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  updateProfile(details: UserDetails): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  getVersion(): <span class="hljs-built_in">string</span> { <span class="hljs-comment">/* ... */</span> }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dashboard</span> </span>{
+  disable(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  enable(): <span class="hljs-built_in">void</span> { <span class="hljs-comment">/* ... */</span> }
+  getVersion(): <span class="hljs-built_in">string</span> { <span class="hljs-comment">/* ... */</span> }
+}
+
+<span class="hljs-comment">// split the responsibilities by moving the remaining methods to other classes</span>
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<h3 id="haute-cohésion-et-faible-couplage">Haute cohésion et faible couplage</h3>
+<p>La cohésion définit le degré de relation entre les membres de la classe. Idéalement,
+tous les champs d&apos;une classe doivent être utilisés par chaque méthode. On dit alors
+que la classe est au maximum cohérente. En pratique, cela n&apos;est cependant pas toujours
+possible, ni même conseillé. Vous devez cependant préférer une cohésion élevée.</p>
+<p>Le couplage fait référence à la façon dont les parents sont liés ou dépendants
+entre eux. Les classes sont dites à faible couplage si les changements dans l&apos;un
+d&apos;entre eux n&apos;affectent pas l&apos;autre.</p>
+<p>Une bonne conception logicielle a une <strong>haute cohésion</strong> et un <strong>faible couplage</strong>.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserManager</span> </span>{
+  <span class="hljs-comment">// Bad: each private variable is used by one or another group of methods.</span>
+  <span class="hljs-comment">// It makes clear evidence that the class is holding more than a single responsibility.</span>
+  <span class="hljs-comment">// If I need only to create the service to get the transactions for a user,</span>
+  <span class="hljs-comment">// I&apos;m still forced to pass and instance of `emailSender`.</span>
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> db: Database,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> emailSender: EmailSender</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> getUser(id: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;User&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.users.findOne({ id });
+  }
+
+  <span class="hljs-keyword">async</span> getTransactions(userId: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;Transaction[]&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> db.transactions.find({ userId });
+  }
+
+  <span class="hljs-keyword">async</span> sendGreeting(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-keyword">await</span> emailSender.send(<span class="hljs-string">&apos;Welcome!&apos;</span>);
+  }
+
+  <span class="hljs-keyword">async</span> sendNotification(text: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-keyword">await</span> emailSender.send(text);
+  }
+
+  <span class="hljs-keyword">async</span> sendNewsletter(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserService</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> db: Database</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> getUser(id: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;User&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-built_in">this</span>.db.users.findOne({ id });
+  }
+
+  <span class="hljs-keyword">async</span> getTransactions(userId: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">Promise</span>&lt;Transaction[]&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-built_in">this</span>.db.transactions.find({ userId });
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserNotifier</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> emailSender: EmailSender</span>)</span> {
+  }
+
+  <span class="hljs-keyword">async</span> sendGreeting(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-keyword">await</span> <span class="hljs-built_in">this</span>.emailSender.send(<span class="hljs-string">&apos;Welcome!&apos;</span>);
+  }
+
+  <span class="hljs-keyword">async</span> sendNotification(text: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-keyword">await</span> <span class="hljs-built_in">this</span>.emailSender.send(text);
+  }
+
+  <span class="hljs-keyword">async</span> sendNewsletter(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<h3 id="préférer-la-composition-à-lhéritage">Préférer la composition à l&apos;héritage</h3>
+<p>Comme indiqué dans <a href="https://en.wikipedia.org/wiki/Design_Patterns" target="_blank">Design Patterns</a>
+du “Gang of Four”, <em>vous devriez préférer la composition à l&apos;héritage</em> où vous le
+pouvez. Il y a beaucoup de bonnes raisons d&apos;utiliser l&apos;héritage et beaucoup de
+bonnes raisons d&apos;utiliser la composition. Le point principal de cette maxime est
+que si votre esprit va instinctivement à l&apos;héritage, essayez de penser si la
+composition pourrait mieux modéliser votre problème. Dans certains cas, c&apos;est possible.</p>
+<p>Vous vous demandez peut-être alors &quot;quand dois-je utiliser l&apos;héritage?&quot; Cela
+dépend de votre problème, mais c&apos;est une liste décente où l&apos;héritage a plus de
+sens que la composition:</p>
+<ol>
+<li><p>Votre héritage représente une relation &quot;est-une&quot; et non une relation &quot;a-une&quot;
+(Humain-&gt; Animal vs Utilisateur-&gt; Détails de l&apos;utilisateur).</p>
+</li>
+<li><p>Vous pouvez réutiliser le code des classes de base (les humains peuvent se
+déplacer comme tous les animaux).</p>
+</li>
+<li><p>Vous souhaitez apporter des modifications globales aux classes dérivées en
+modifiant une classe de base. (Modifiez la dépense calorique de tous les animaux
+lorsqu&apos;ils se déplacent).</p>
+</li>
+</ol>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> name: <span class="hljs-built_in">string</span>,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> email: <span class="hljs-built_in">string</span></span>)</span> {
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// Bad because Employees &quot;have&quot; tax data. EmployeeTaxData is not a type of Employee</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmployeeTaxData</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    name: <span class="hljs-built_in">string</span>,
+    email: <span class="hljs-built_in">string</span>,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> ssn: <span class="hljs-built_in">string</span>,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> salary: <span class="hljs-built_in">number</span></span>)</span> {
+    <span class="hljs-built_in">super</span>(name, email);
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-keyword">private</span> taxData: EmployeeTaxData;
+
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> name: <span class="hljs-built_in">string</span>,
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> email: <span class="hljs-built_in">string</span></span>)</span> {
+  }
+
+  setTaxData(ssn: <span class="hljs-built_in">string</span>, <span class="hljs-attr">salary</span>: <span class="hljs-built_in">number</span>): Employee {
+    <span class="hljs-built_in">this</span>.taxData = <span class="hljs-keyword">new</span> EmployeeTaxData(ssn, salary);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmployeeTaxData</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> ssn: <span class="hljs-built_in">string</span>,
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> salary: <span class="hljs-built_in">number</span></span>)</span> {
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h3 id="utiliser-le-chaînage-des-méthodes">Utiliser le chaînage des méthodes</h3>
+<p>Ce modèle est très utile et couramment utilisé dans de nombreuses bibliothèques.
+Il permet à votre code d&apos;être expressif et moins verbeux. Pour cette raison,
+utilisez le chaînage de méthodes et regardez à quel point votre code sera propre.</p>
+<p><strong>Mal:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QueryBuilder</span> </span>{
+  <span class="hljs-keyword">private</span> collection: <span class="hljs-built_in">string</span>;
+  <span class="hljs-keyword">private</span> pageNumber: <span class="hljs-built_in">number</span> = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">private</span> itemsPerPage: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">private</span> orderByFields: <span class="hljs-built_in">string</span>[] = [];
+
+  <span class="hljs-keyword">from</span>(collection: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">this</span>.collection = collection;
+  }
+
+  page(<span class="hljs-built_in">number</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">itemsPerPage</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">this</span>.pageNumber = <span class="hljs-built_in">number</span>;
+    <span class="hljs-built_in">this</span>.itemsPerPage = itemsPerPage;
+  }
+
+  orderBy(...fields: <span class="hljs-built_in">string</span>[]): <span class="hljs-built_in">void</span> {
+    <span class="hljs-built_in">this</span>.orderByFields = fields;
+  }
+
+  build(): Query {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">const</span> queryBuilder = <span class="hljs-keyword">new</span> QueryBuilder();
+queryBuilder.from(<span class="hljs-string">&apos;users&apos;</span>);
+queryBuilder.page(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>);
+queryBuilder.orderBy(<span class="hljs-string">&apos;firstName&apos;</span>, <span class="hljs-string">&apos;lastName&apos;</span>);
+
+<span class="hljs-keyword">const</span> query = queryBuilder.build();
+</code></pre>
+<p><strong>Bien:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QueryBuilder</span> </span>{
+  <span class="hljs-keyword">private</span> collection: <span class="hljs-built_in">string</span>;
+  <span class="hljs-keyword">private</span> pageNumber: <span class="hljs-built_in">number</span> = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">private</span> itemsPerPage: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>;
+  <span class="hljs-keyword">private</span> orderByFields: <span class="hljs-built_in">string</span>[] = [];
+
+  <span class="hljs-keyword">from</span>(collection: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.collection = collection;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  page(<span class="hljs-built_in">number</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">itemsPerPage</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">100</span>): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.pageNumber = <span class="hljs-built_in">number</span>;
+    <span class="hljs-built_in">this</span>.itemsPerPage = itemsPerPage;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  orderBy(...fields: <span class="hljs-built_in">string</span>[]): <span class="hljs-built_in">this</span> {
+    <span class="hljs-built_in">this</span>.orderByFields = fields;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  build(): Query {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">const</span> query = <span class="hljs-keyword">new</span> QueryBuilder()
+  .from(<span class="hljs-string">&apos;users&apos;</span>)
+  .page(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>)
+  .orderBy(<span class="hljs-string">&apos;firstName&apos;</span>, <span class="hljs-string">&apos;lastName&apos;</span>)
+  .build();
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="OBJECTS-DATA.html" class="navigation navigation-prev " aria-label="Previous page: Objets et Structures de Données">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="SOLID.html" class="navigation navigation-next " aria-label="Next page: SOLID">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Classes","level":"1.5","depth":1,"next":{"title":"SOLID","level":"1.6","depth":1,"path":"SOLID.md","ref":"./SOLID.md","articles":[]},"previous":{"title":"Objets et Structures de Données","level":"1.4","depth":1,"path":"OBJECTS-DATA.md","ref":"./OBJECTS-DATA.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"CLASSES.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

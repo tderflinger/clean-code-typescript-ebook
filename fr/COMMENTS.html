@@ -1,9 +1,9 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
-        <title>Comments · Clean Code TypeScript</title>
+        <title>Commentaires · Clean Code TypeScript</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.0">
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="TRANSLATIONS.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -287,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Comments</a>
+        <a href="." >Commentaires</a>
     </h1>
 </div>
 
@@ -302,24 +302,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="comments">Comments</h2>
-<p>The use of a comments is an indication of failure to express without them. Code should be the only source of truth.</p>
+                                <h2 id="commentaires">Commentaires</h2>
+<p>L&apos;utilisation de commentaires est une indication de non-expression sans eux.
+Le code devrait être la seule source de vérité.</p>
 <blockquote>
-<p>Don’t comment bad code—rewrite it.<br>— <em>Brian W. Kernighan and P. J. Plaugher</em></p>
+<p>Ne commentez pas le mauvais code - réécrivez-le.
+— <em>Brian W. Kernighan and P. J. Plaugher</em></p>
 </blockquote>
-<h3 id="prefer-self-explanatory-code-instead-of-comments">Prefer self explanatory code instead of comments</h3>
-<p>Comments are an apology, not a requirement. Good code <em>mostly</em> documents itself.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-de-préférence-un-code-explicite-plutôt-que-des-commentaires">Utiliser de préférence un code explicite plutôt que des commentaires</h3>
+<p>Les commentaires sont des excuses, pas une exigence. Un bon code <em>surtout</em> se documente.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-comment">// Check if subscription is active.</span>
 <span class="hljs-keyword">if</span> (subscription.endDate &gt; <span class="hljs-built_in">Date</span>.now) {  }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> isSubscriptionActive = subscription.endDate &gt; <span class="hljs-built_in">Date</span>.now;
 <span class="hljs-keyword">if</span> (isSubscriptionActive) { <span class="hljs-comment">/* ... */</span> }
 </code></pre>
-<h3 id="dont-leave-commented-out-code-in-your-codebase">Don&apos;t leave commented out code in your codebase</h3>
-<p>Version control exists for a reason. Leave old code in your history.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="ne-pas-laisser-pas-de-code-commenté-dans-votre-base-de-code">Ne pas laisser pas de code commenté dans votre base de code</h3>
+<p>Le contrôle de version existe pour une raison. Laissez l&apos;ancien code dans votre historique.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> User = {
   <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
   email: <span class="hljs-built_in">string</span>;
@@ -327,15 +329,17 @@
   <span class="hljs-comment">// jobPosition: string;</span>
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> User = {
   <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
   email: <span class="hljs-built_in">string</span>;
 }
 </code></pre>
-<h3 id="dont-have-journal-comments">Don&apos;t have journal comments</h3>
-<p>Remember, use version control! There&apos;s no need for dead code, commented code, and especially journal comments. Use <code>git log</code> to get history!</p>
-<p><strong>Bad:</strong></p>
+<h3 id="ne-pas-avoir-de-commentaires-dans-larchive-de-base">Ne pas avoir de commentaires dans l&apos;archive de base</h3>
+<p>Rappelez-vous, utilisez le contrôle de version! Ce n&apos;est pas nécessaire garder des
+codes non utilisés ou commentés, et surtout de commentaires dans l&apos;archive de base.
+Utilisez le <code>git log</code> pour obtenir l&apos;historique!</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-comment">/**
  * 2016-12-20: Removed monads, didn&apos;t understand them (RM)
  * 2016-10-01: Improved using special monads (JP)
@@ -346,14 +350,19 @@
   <span class="hljs-keyword">return</span> a + b;
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">number</span></span>): <span class="hljs-title">number</span> </span>{
   <span class="hljs-keyword">return</span> a + b;
 }
 </code></pre>
-<h3 id="avoid-positional-markers">Avoid positional markers</h3>
-<p>They usually just add noise. Let the functions and variable names along with the proper indentation and formatting give the visual structure to your code.<br>Most IDE support code folding feature that allows you to collapse/expand blocks of code (see Visual Studio Code <a href="https://code.visualstudio.com/updates/v1_17#_folding-regions" target="_blank">folding regions</a>).</p>
-<p><strong>Bad:</strong></p>
+<h3 id="éviter-les-marqueurs-de-position">Éviter les marqueurs de position</h3>
+<p>Ils ajoutent généralement du &quot;noise&quot; au code. Laissez les fonctions et les noms
+de variables ainsi que l&apos;indentation et le formatage appropriés donner la structure
+visuelle à votre code.
+La plupart des IDE prennent en charge la fonction de pliage de code qui vous permet
+de réduire/développer des blocs de code (voir  Visual Studio Code
+<a href="https://code.visualstudio.com/updates/v1_17#_folding-regions" target="_blank">régions de pliage</a>).</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
 <span class="hljs-comment">// Client class</span>
 <span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
@@ -382,7 +391,7 @@
   }
 };
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
   <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span>;
   name: <span class="hljs-built_in">string</span>;
@@ -402,18 +411,19 @@
   }
 };
 </code></pre>
-<h3 id="todo-comments">TODO comments</h3>
-<p>When you find yourself that you need to leave notes in the code for some later improvements,
-do that using <code>// TODO</code> comments. Most IDE have special support for those kinds of comments so that
-you can quickly go over the entire list of todos.  </p>
-<p>Keep in mind however that a <em>TODO</em> comment is not an excuse for bad code. </p>
-<p><strong>Bad:</strong></p>
+<h3 id="les-commentaires-todo">Les commentaires TODO</h3>
+<p>Lorsque vous vous rendez compte que vous devez laisser des notes dans le code pour
+des améliorations ultérieures, faites-le en utilisant les commentaires <code>// TODO</code>.
+La plupart des IDE ont un support spécial pour ce genre de commentaires afin que
+vous puissiez parcourir rapidement la liste complète des &quot;todos&quot;.</p>
+<p>Gardez cependant à l&apos;esprit qu&apos;un commentaire <em>TODO</em> n&apos;est pas une excuse pour un mauvais code.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveSubscriptions</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Subscription</span>[]&gt; </span>{
   <span class="hljs-comment">// ensure `dueDate` is indexed.</span>
   <span class="hljs-keyword">return</span> db.subscriptions.find({ <span class="hljs-attr">dueDate</span>: { <span class="hljs-attr">$lte</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() } });
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getActiveSubscriptions</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Subscription</span>[]&gt; </span>{
   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> ensure `dueDate` is indexed.</span>
   <span class="hljs-keyword">return</span> db.subscriptions.find({ <span class="hljs-attr">dueDate</span>: { <span class="hljs-attr">$lte</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() } });
@@ -446,12 +456,12 @@ you can quickly go over the entire list of todos.  </p>
 
             
                 
-                <a href="FORMATTING.html" class="navigation navigation-prev " aria-label="Previous page: Formatting">
+                <a href="FORMATTING.html" class="navigation navigation-prev " aria-label="Previous page: Formatage du Code">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="TRANSLATIONS.html" class="navigation navigation-next " aria-label="Next page: Translations">
+                <a href="TRANSLATIONS.html" class="navigation navigation-next " aria-label="Next page: Traductions">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -462,7 +472,7 @@ you can quickly go over the entire list of todos.  </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Comments","level":"1.11","depth":1,"next":{"title":"Translations","level":"1.12","depth":1,"path":"TRANSLATIONS.md","ref":"./TRANSLATIONS.md","articles":[]},"previous":{"title":"Formatting","level":"1.10","depth":1,"path":"FORMATTING.md","ref":"./FORMATTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"COMMENTS.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Commentaires","level":"1.11","depth":1,"next":{"title":"Traductions","level":"1.12","depth":1,"path":"TRANSLATIONS.md","ref":"./TRANSLATIONS.md","articles":[]},"previous":{"title":"Formatage du Code","level":"1.10","depth":1,"path":"FORMATTING.md","ref":"./FORMATTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"COMMENTS.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -512,27 +522,27 @@ you can quickly go over the entire list of todos.  </p>
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

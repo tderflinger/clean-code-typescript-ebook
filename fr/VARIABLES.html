@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
         <title>Variables · Clean Code TypeScript</title>
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="FUNCTIONS.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -303,85 +303,92 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="variables">Variables</h2>
-<h3 id="use-meaningful-variable-names">Use meaningful variable names</h3>
-<p>Distinguish names in such a way that the reader knows what the differences offer.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-noms-de-variables-descriptifs">Utiliser des noms de variables descriptifs</h3>
+<p>Distinguer les noms de façon que le lecteur sache ce que les différences offrent.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">between</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">a1: T, a2: T, a3: T</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> a2 &lt;= a1 &amp;&amp; a1 &lt;= a3;
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">between</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">value: T, left: T, right: T</span>): <span class="hljs-title">boolean</span> </span>{
   <span class="hljs-keyword">return</span> left &lt;= value &amp;&amp; value &lt;= right;
 }
 </code></pre>
-<h3 id="use-pronounceable-variable-names">Use pronounceable variable names</h3>
-<p>If you can’t pronounce it, you can’t discuss it without sounding like an idiot.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-noms-de-variables-prononçables">Utiliser des noms de variables prononçables</h3>
+<p>Si vous ne pouvez pas le prononcer, vous ne pouvez pas en discuter sans ressembler à un idiot.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> DtaRcrd102 = {
   <span class="hljs-attr">genymdhms</span>: <span class="hljs-built_in">Date</span>;
   modymdhms: <span class="hljs-built_in">Date</span>;
   pszqint: <span class="hljs-built_in">number</span>;
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> Customer = {
   <span class="hljs-attr">generationTimestamp</span>: <span class="hljs-built_in">Date</span>;
   modificationTimestamp: <span class="hljs-built_in">Date</span>;
   recordId: <span class="hljs-built_in">number</span>;
 }
 </code></pre>
-<h3 id="use-the-same-vocabulary-for-the-same-type-of-variable">Use the same vocabulary for the same type of variable</h3>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-le-même-vocabulaire-pour-le-même-type-de-variable">Utiliser le même vocabulaire pour le même type de variable</h3>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUserInfo</span>(<span class="hljs-params"></span>): <span class="hljs-title">User</span></span>;
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUserDetails</span>(<span class="hljs-params"></span>): <span class="hljs-title">User</span></span>;
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUserData</span>(<span class="hljs-params"></span>): <span class="hljs-title">User</span></span>;
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUser</span>(<span class="hljs-params"></span>): <span class="hljs-title">User</span></span>;
 </code></pre>
-<h3 id="use-searchable-names">Use searchable names</h3>
-<p>We will read more code than we will ever write. It&apos;s important that the code we do write must be readable and searchable. By <em>not</em> naming variables that end up being meaningful for understanding our program, we hurt our readers. Make your names searchable. Tools like <a href="https://typescript-eslint.io/" target="_blank">ESLint</a> can help identify unnamed constants.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-noms-consultables">Utiliser des noms consultables</h3>
+<p>Nous lirons plus de code que nous n&apos;en aurons jamais écrit. Il est important que
+le code que nous écrivons soit lisible et consultable. En <em>ne nommant pas</em> les
+variables qui finissent par être significatives pour comprendre notre programme,
+nous blessons nos lecteurs. Rendez vos noms consultables. Des outils comme
+<a href="https://palantir.github.io/tslint/rules/no-magic-numbers/" target="_blank">TSLint</a> peuvent aider
+à identifier les constantes sans nom.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-comment">// What the heck is 86400000 for?</span>
 <span class="hljs-built_in">setTimeout</span>(restart, <span class="hljs-number">86400000</span>);
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-comment">// Declare them as capitalized named constants.</span>
-<span class="hljs-keyword">const</span> MILLISECONDS_PER_DAY = <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>; <span class="hljs-comment">// 86400000</span>
+<span class="hljs-keyword">const</span> MILLISECONDS_IN_A_DAY = <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>;
 
-<span class="hljs-built_in">setTimeout</span>(restart, MILLISECONDS_PER_DAY);
+<span class="hljs-built_in">setTimeout</span>(restart, MILLISECONDS_IN_A_DAY);
 </code></pre>
-<h3 id="use-explanatory-variables">Use explanatory variables</h3>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-variables-explicatives">Utiliser des variables explicatives</h3>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">const</span> users: <span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">string</span>, User&gt;;
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> keyValue <span class="hljs-keyword">of</span> users) {
   <span class="hljs-comment">// iterate through users map</span>
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">const</span> users: <span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">string</span>, User&gt;;
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [id, user] <span class="hljs-keyword">of</span> users) {
   <span class="hljs-comment">// iterate through users map</span>
 }
 </code></pre>
-<h3 id="avoid-mental-mapping">Avoid Mental Mapping</h3>
-<p>Explicit is better than implicit.<br><em>Clarity is king.</em></p>
-<p><strong>Bad:</strong></p>
+<h3 id="évitez-le-mapping-mental">Évitez le mapping mental</h3>
+<p>Mieux vaut être explicite qu&apos;implicite.
+<em>La clarté est essentielle.</em></p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> u = getUser();
 <span class="hljs-keyword">const</span> s = getSubscription();
 <span class="hljs-keyword">const</span> t = charge(u, s);
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> user = getUser();
 <span class="hljs-keyword">const</span> subscription = getSubscription();
 <span class="hljs-keyword">const</span> transaction = charge(user, subscription);
 </code></pre>
-<h3 id="dont-add-unneeded-context">Don&apos;t add unneeded context</h3>
-<p>If your class/type/object name tells you something, don&apos;t repeat that in your variable name.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="ne-pas-ajouter-de-contexte-inutile">Ne pas ajouter de contexte inutile</h3>
+<p>Si votre nom de classe/type/objet vous dit quelque chose, ne répétez pas cela dans
+le nom de votre variable.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> Car = {
   <span class="hljs-attr">carMake</span>: <span class="hljs-built_in">string</span>;
   carModel: <span class="hljs-built_in">string</span>;
@@ -392,7 +399,7 @@
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${car.carMake}</span> <span class="hljs-subst">${car.carModel}</span> (<span class="hljs-subst">${car.carColor}</span>)`</span>);
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">type</span> Car = {
   <span class="hljs-attr">make</span>: <span class="hljs-built_in">string</span>;
   model: <span class="hljs-built_in">string</span>;
@@ -403,23 +410,24 @@
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${car.make}</span> <span class="hljs-subst">${car.model}</span> (<span class="hljs-subst">${car.color}</span>)`</span>);
 }
 </code></pre>
-<h3 id="use-default-arguments-instead-of-short-circuiting-or-conditionals">Use default arguments instead of short circuiting or conditionals</h3>
-<p>Default arguments are often cleaner than short circuiting.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-arguments-par-défaut-au-lieu-dun-raccourci-ou-de-conditions">Utiliser des arguments par défaut au lieu d&apos;un raccourci ou de conditions</h3>
+<p>Les arguments par défaut sont souvent plus propres que les raccourcis.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadPages</span>(<span class="hljs-params">count?: <span class="hljs-built_in">number</span></span>) </span>{
   <span class="hljs-keyword">const</span> loadCount = count !== <span class="hljs-literal">undefined</span> ? count : <span class="hljs-number">10</span>;
   <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadPages</span>(<span class="hljs-params">count: <span class="hljs-built_in">number</span> = <span class="hljs-number">10</span></span>) </span>{
   <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<h3 id="use-enum-to-document-the-intent">Use enum to document the intent</h3>
-<p>Enums can help you document the intent of the code. For example when we are concerned about values being
-different rather than the exact value of those.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-enum-pour-documenter-lintention">Utiliser enum pour documenter l&apos;intention</h3>
+<p>Les énumérations peuvent vous aider à documenter l&apos;intention du code. Par exemple,
+lorsque on veut que les valeurs soient différentes plutôt que la valeur exacte de
+celles-ci.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> GENRE = {
   <span class="hljs-attr">ROMANTIC</span>: <span class="hljs-string">&apos;romantic&apos;</span>,
   <span class="hljs-attr">DRAMA</span>: <span class="hljs-string">&apos;drama&apos;</span>,
@@ -434,12 +442,12 @@ projector.configureFilm(GENRE.COMEDY);
   <span class="hljs-function"><span class="hljs-title">configureFilm</span>(<span class="hljs-params">genre</span>)</span> {
     <span class="hljs-keyword">switch</span> (genre) {
       <span class="hljs-keyword">case</span> GENRE.ROMANTIC:
-        <span class="hljs-comment">// some logic to be executed </span>
+        <span class="hljs-comment">// some logic to be executed</span>
     }
   }
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-built_in">enum</span> GENRE {
   ROMANTIC,
   DRAMA,
@@ -454,7 +462,7 @@ projector.configureFilm(GENRE.COMEDY);
   <span class="hljs-function"><span class="hljs-title">configureFilm</span>(<span class="hljs-params">genre</span>)</span> {
     <span class="hljs-keyword">switch</span> (genre) {
       <span class="hljs-keyword">case</span> GENRE.ROMANTIC:
-        <span class="hljs-comment">// some logic to be executed </span>
+        <span class="hljs-comment">// some logic to be executed</span>
     }
   }
 }
@@ -491,7 +499,7 @@ projector.configureFilm(GENRE.COMEDY);
                 </a>
                 
                 
-                <a href="FUNCTIONS.html" class="navigation navigation-next " aria-label="Next page: Functions">
+                <a href="FUNCTIONS.html" class="navigation navigation-next " aria-label="Next page: Fonctions">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -502,7 +510,7 @@ projector.configureFilm(GENRE.COMEDY);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Variables","level":"1.2","depth":1,"next":{"title":"Functions","level":"1.3","depth":1,"path":"FUNCTIONS.md","ref":"./FUNCTIONS.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"VARIABLES.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Variables","level":"1.2","depth":1,"next":{"title":"Fonctions","level":"1.3","depth":1,"path":"FUNCTIONS.md","ref":"./FUNCTIONS.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"VARIABLES.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -552,27 +560,27 @@ projector.configureFilm(GENRE.COMEDY);
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

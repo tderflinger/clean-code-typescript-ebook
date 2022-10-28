@@ -1,9 +1,9 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
-        <title>Testing · Clean Code TypeScript</title>
+        <title>Tests · Clean Code TypeScript</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.0">
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="CONCURRENCY.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -287,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Testing</a>
+        <a href="." >Tests</a>
     </h1>
 </div>
 
@@ -302,37 +302,58 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="testing">Testing</h2>
-<p>Testing is more important than shipping. If you have no tests or an inadequate amount, then every time you ship code you won&apos;t be sure that you didn&apos;t break anything.
-Deciding on what constitutes an adequate amount is up to your team, but having 100% coverage (all statements and branches)
-is how you achieve very high confidence and developer peace of mind. This means that in addition to having a great testing framework, you also need to use a good <a href="https://github.com/gotwarlost/istanbul" target="_blank">coverage tool</a>.</p>
-<p>There&apos;s no excuse to not write tests. There are <a href="http://jstherightway.org/#testing-tools" target="_blank">plenty of good JS test frameworks</a> with typings support for TypeScript, so find one that your team prefers. When you find one that works for your team, then aim to always write tests for every new feature/module you introduce. If your preferred method is Test Driven Development (TDD), that is great, but the main point is to just make sure you are reaching your coverage goals before launching any feature, or refactoring an existing one.  </p>
-<h3 id="the-three-laws-of-tdd">The three laws of TDD</h3>
+                                <h2 id="tests">Tests</h2>
+<p>Les tests sont plus importants que l&apos;expédition. Si vous n&apos;avez aucun test ou une
+quantité insuffisante, chaque fois que vous expédiez du code, vous ne serez pas
+sûr de ne rien casser.
+Décider de ce qui constitue un montant adéquat appartient à votre équipe, mais
+avoir une couverture à 100% (tous les relevés et succursales)
+est la façon dont vous obtenez une confiance très élevée et une tranquillité
+d&apos;esprit de développeur Cela signifie qu&apos;en plus d&apos;avoir un excellent cadre de
+test, vous devez également utiliser un bon <a href="https://github.com/gotwarlost/istanbul" target="_blank">outil de couverture</a>.</p>
+<p>Il n&apos;y a aucune excuse pour ne pas écrire de tests. Il existe <a href="http://jstherightway.org/#testing-tools" target="_blank">beaucoup de bons frameworks de test JS</a> avec prise en charge des typages pour TypeScript, alors trouvez
+celui que votre équipe préfère. Lorsque vous en trouvez un qui fonctionne pour
+votre équipe, essayez de toujours écrire des tests pour chaque nouvelle
+fonctionnalité/module que vous introduisez. Si votre méthode préférée est le
+développement piloté par les tests (TDD), c&apos;est très bien, mais le principal
+est de vous assurer que vous atteignez vos objectifs de couverture avant de
+lancer une fonctionnalité ou de refactoriser une fonctionnalité existante.</p>
+<h3 id="les-trois-lois-du-tdd">Les trois lois du TDD</h3>
 <ol>
-<li><p>You are not allowed to write any production code unless it is to make a failing unit test pass.</p>
+<li><p>Vous n&apos;êtes pas autorisé à écrire un code de production, sauf pour effectuer
+un test unitaire ayant échoué.</p>
 </li>
-<li><p>You are not allowed to write any more of a unit test than is sufficient to fail, and; compilation failures are failures.</p>
+<li><p>Vous n&apos;êtes pas autorisé à écrire plus d&apos;un test unitaire que ce qui est
+suffisant pour échouer; et les échecs de compilation sont des échecs.</p>
 </li>
-<li><p>You are not allowed to write any more production code than is sufficient to pass the one failing unit test.</p>
+<li><p>Vous n&apos;êtes pas autorisé à écrire plus de code de production qu&apos;il n&apos;en faut
+pour réussir le test unitaire ayant échoué.</p>
 </li>
 </ol>
-<h3 id="first-rules">F.I.R.S.T. rules</h3>
-<p>Clean tests should follow the rules:</p>
+<h3 id="les-règles-de-first">Les règles de F.I.R.S.T</h3>
+<p>Les tests propres doivent suivre les règles:</p>
 <ul>
-<li><p><strong>Fast</strong> tests should be fast because we want to run them frequently.</p>
+<li><p><strong>Fast</strong>: les tests <em>rapides</em> doivent être rapides car nous voulons les exécuter fréquemment.</p>
 </li>
-<li><p><strong>Independent</strong> tests should not depend on each other. They should provide same output whether run independently or all together in any order.</p>
+<li><p><strong>Independent</strong>: les tests <em>indépendants</em> ne devraient pas dépendre les uns des autres.
+Ils doivent fournir la même sortie, qu&apos;ils soient exécutés indépendamment ou tous
+ensemble dans n&apos;importe quel ordre.</p>
 </li>
-<li><p><strong>Repeatable</strong> tests should be repeatable in any environment and there should be no excuse for why they fail.</p>
+<li><p><strong>Repeatable</strong>: les tests doivent être reproductibles dans tous les environnements et
+ne soyez pas une excuse pour pourquoi ils échouent.</p>
 </li>
-<li><p><strong>Self-Validating</strong> a test should answer with either <em>Passed</em> or <em>Failed</em>. You don&apos;t need to compare log files to answer if a test passed.</p>
+<li><p><strong>Self-Validating</strong>: un test doit répondre avec <em>Réussi</em> ou <em>Échoué</em>. Vous n&apos;avez
+pas besoin de comparer les fichiers journaux pour répondre si un test a réussi.</p>
 </li>
-<li><p><strong>Timely</strong> unit tests should be written before the production code. If you write tests after the production code, you might find writing tests too hard.</p>
+<li><p><strong>Timely</strong>: des tests unitaires <em>opportuns</em> doivent être écrits avant le code de
+production. Si vous écrivez des tests après le code de production, vous pourriez
+trouver les tests d&apos;écriture trop difficiles.</p>
 </li>
 </ul>
-<h3 id="single-concept-per-test">Single concept per test</h3>
-<p>Tests should also follow the <em>Single Responsibility Principle</em>. Make only one assert per unit test.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="concept-unique-par-test">Concept unique par test</h3>
+<p>Les tests doivent également suivre le <em>principe de responsabilité unique</em>. Faites
+une seule assertion par test unitaire.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { assert } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;chai&apos;</span>;
 
 describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="hljs-function">() =&gt;</span> {
@@ -350,7 +371,7 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
   });
 });
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { assert } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;chai&apos;</span>;
 
 describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="hljs-function">() =&gt;</span> {
@@ -370,9 +391,9 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
   });
 });
 </code></pre>
-<h3 id="the-name-of-the-test-should-reveal-its-intention">The name of the test should reveal its intention</h3>
-<p>When a test fails, its name is the first indication of what may have gone wrong.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="le-nom-du-test-doit-révéler-son-intention">Le nom du test doit révéler son intention</h3>
+<p>Lorsqu&apos;un test échoue, son nom est la première indication de ce qui peut avoir mal tourné.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts">describe(<span class="hljs-string">&apos;Calendar&apos;</span>, <span class="hljs-function">() =&gt;</span> {
   it(<span class="hljs-string">&apos;2/29/2020&apos;</span>, <span class="hljs-function">() =&gt;</span> {
     <span class="hljs-comment">// ...</span>
@@ -383,7 +404,7 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
   });
 });
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts">describe(<span class="hljs-string">&apos;Calendar&apos;</span>, <span class="hljs-function">() =&gt;</span> {
   it(<span class="hljs-string">&apos;should handle leap year&apos;</span>, <span class="hljs-function">() =&gt;</span> {
     <span class="hljs-comment">// ...</span>
@@ -426,7 +447,7 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
                 </a>
                 
                 
-                <a href="CONCURRENCY.html" class="navigation navigation-next " aria-label="Next page: Concurrency">
+                <a href="CONCURRENCY.html" class="navigation navigation-next " aria-label="Next page: Opérations Concurrentes">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -437,7 +458,7 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Testing","level":"1.7","depth":1,"next":{"title":"Concurrency","level":"1.8","depth":1,"path":"CONCURRENCY.md","ref":"./CONCURRENCY.md","articles":[]},"previous":{"title":"SOLID","level":"1.6","depth":1,"path":"SOLID.md","ref":"./SOLID.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"TESTING.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tests","level":"1.7","depth":1,"next":{"title":"Opérations Concurrentes","level":"1.8","depth":1,"path":"CONCURRENCY.md","ref":"./CONCURRENCY.md","articles":[]},"previous":{"title":"SOLID","level":"1.6","depth":1,"path":"SOLID.md","ref":"./SOLID.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"TESTING.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -487,27 +508,27 @@ describe(<span class="hljs-string">&apos;AwesomeDate&apos;</span>, <span class="
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

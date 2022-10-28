@@ -1,9 +1,9 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
-        <title>Formatting · Clean Code TypeScript</title>
+        <title>Formatage du Code · Clean Code TypeScript</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.0">
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="COMMENTS.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -287,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Formatting</a>
+        <a href="." >Formatage du Code</a>
     </h1>
 </div>
 
@@ -302,23 +302,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="formatting">Formatting</h2>
-<p>Formatting is subjective. Like many rules herein, there is no hard and fast rule that you must follow. The main point is <em>DO NOT ARGUE</em> over formatting. There are tons of tools to automate this. Use one! It&apos;s a waste of time and money for engineers to argue over formatting. The general rule to follow is <em>keep consistent formatting rules</em>.  </p>
-<p>For TypeScript there is a powerful tool called <a href="https://typescript-eslint.io/" target="_blank">ESLint</a>. It&apos;s a static analysis tool that can help you improve dramatically the readability and maintainability of your code. There are ready to use ESLint configurations that you can reference in your projects:</p>
+                                <h2 id="formatage-du-code">Formatage du Code</h2>
+<p>Le formatage est subjectif. Comme beaucoup de règles ici, il n&apos;y a pas de règle
+stricte que vous devez suivre. Le but principal est <em>NE PAS DISCUTER</em> sur le formatage.
+Il existe des tonnes d&apos;outils pour automatiser cela. Utilisez-en un! C&apos;est une perte
+de temps et d&apos;argent pour les ingénieurs de discuter du formatage. La règle générale
+à suivre est de <em>conserver des règles de formatage cohérentes</em>.</p>
+<p>Pour TypeScript, il existe un outil puissant appelé <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a>.
+Il s&apos;agit d&apos;un outil d&apos;analyse statique qui peut vous aider à améliorer considérablement
+la lisibilité et la maintenabilité de votre code. Il existe des configurations
+TSLint prêtes à l&apos;emploi que vous pouvez référencer dans vos projets:</p>
 <ul>
-<li><p><a href="https://www.npmjs.com/package/eslint-config-airbnb-typescript" target="_blank">ESLint Config Airbnb</a> - Airbnb style guide</p>
+<li><p><a href="https://www.npmjs.com/package/tslint-config-standard" target="_blank">TSLint Config Standard</a> - règles de style standard</p>
 </li>
-<li><p><a href="https://www.npmjs.com/package/eslint-plugin-base-style-config" target="_blank">ESLint Base Style Config</a> - a Set of Essential ESLint rules for JS, TS and React</p>
+<li><p><a href="https://www.npmjs.com/package/tslint-config-airbnb" target="_blank">TSLint Config Airbnb</a> - guide de style Airbnb</p>
 </li>
-<li><p><a href="https://www.npmjs.com/package/eslint-config-prettier" target="_blank">ESLint + Prettier</a> - lint rules for <a href="https://github.com/prettier/prettier" target="_blank">Prettier</a> code formatter</p>
+<li><p><a href="https://www.npmjs.com/package/tslint-clean-code" target="_blank">TSLint Clean Code</a> - Les règles TSLint inspirées du <a href="https://www.amazon.ca/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code: A Handbook of Agile Software Craftsmanship</a></p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/tslint-react" target="_blank">TSLint react</a> - règles sur les peluches liées à React et JSX</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/tslint-config-prettier" target="_blank">TSLint + Prettier</a> - règles de &quot;lint&quot; pour <a href="https://github.com/prettier/prettier" target="_blank">Prettier</a> formateur de code</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/tslint-eslint-rules" target="_blank">ESLint rules for TSLint</a> - règles ESLint pour TypeScript</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/tslint-immutable" target="_blank">Immutable</a> - règles pour désactiver la mutation dans TypeScript</p>
 </li>
 </ul>
-<p>Refer also to this great <a href="https://basarat.gitbook.io/typescript/styleguide" target="_blank">TypeScript StyleGuide and Coding Conventions</a> source.</p>
-<h3 id="migrating-from-tslint-to-eslint">Migrating from TSLint to ESLint</h3>
-<p>If you are looking for help in migrating from TSLint to ESLint, you can check out this project: <a href="https://github.com/typescript-eslint/tslint-to-eslint-config" target="_blank">https://github.com/typescript-eslint/tslint-to-eslint-config</a></p>
-<h3 id="use-consistent-capitalization">Use consistent capitalization</h3>
-<p>Capitalization tells you a lot about your variables, functions, etc. These rules are subjective, so your team can choose whatever they want. The point is, no matter what you all choose, just <em>be consistent</em>.</p>
-<p><strong>Bad:</strong></p>
+<p>Reportez-vous également à cette excellente source
+<a href="https://basarat.gitbook.io/typescript/styleguide" target="_blank">TypeScript StyleGuide and Coding Conventions</a>.</p>
+<h3 id="utiliser-une-capitalisation-cohérente">Utiliser une capitalisation cohérente</h3>
+<p>La capitalisation vous en dit long sur vos variables, fonctions, etc. Ces règles
+sont subjectives, donc votre équipe peut choisir ce qu&apos;elle veut. Le fait est,
+peu importe ce que vous choisissez tous, juste <em>soyez cohérent</em>.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
 <span class="hljs-keyword">const</span> daysInMonth = <span class="hljs-number">30</span>;
 
@@ -331,15 +347,12 @@
 <span class="hljs-keyword">type</span> animal = { <span class="hljs-comment">/* ... */</span> }
 <span class="hljs-keyword">type</span> Container = { <span class="hljs-comment">/* ... */</span> }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
 <span class="hljs-keyword">const</span> DAYS_IN_MONTH = <span class="hljs-number">30</span>;
 
 <span class="hljs-keyword">const</span> SONGS = [<span class="hljs-string">&apos;Back In Black&apos;</span>, <span class="hljs-string">&apos;Stairway to Heaven&apos;</span>, <span class="hljs-string">&apos;Hey Jude&apos;</span>];
 <span class="hljs-keyword">const</span> ARTISTS = [<span class="hljs-string">&apos;ACDC&apos;</span>, <span class="hljs-string">&apos;Led Zeppelin&apos;</span>, <span class="hljs-string">&apos;The Beatles&apos;</span>];
-
-<span class="hljs-keyword">const</span> discography = getArtistDiscography(<span class="hljs-string">&apos;ACDC&apos;</span>);
-<span class="hljs-keyword">const</span> beatlesSongs = SONGS.filter(<span class="hljs-function">(<span class="hljs-params">song</span>) =&gt;</span> isBeatlesSong(song));
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eraseDatabase</span>(<span class="hljs-params"></span>) </span>{}
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">restoreDatabase</span>(<span class="hljs-params"></span>) </span>{}
@@ -347,12 +360,14 @@
 <span class="hljs-keyword">type</span> Animal = { <span class="hljs-comment">/* ... */</span> }
 <span class="hljs-keyword">type</span> Container = { <span class="hljs-comment">/* ... */</span> }
 </code></pre>
-<p>Prefer using <code>PascalCase</code> for class, interface, type and namespace names.<br>Prefer using <code>camelCase</code> for variables, functions and class members.
-Prefer using capitalized <code>SNAKE_CASE</code> for constants.</p>
-<h3 id="function-callers-and-callees-should-be-close">Function callers and callees should be close</h3>
-<p>If a function calls another, keep those functions vertically close in the source file. Ideally, keep the caller right above the callee.
-We tend to read code from top-to-bottom, like a newspaper. Because of this, make your code read that way.</p>
-<p><strong>Bad:</strong></p>
+<p>Utiliser <code>PascalCase</code> de préférence pour les noms de classe, d&apos;interface, de type et d&apos;espace de noms.
+Utiliser <code>camelCase</code> de préférence pour les variables, les fonctions et les membres de la classe.</p>
+<h3 id="les-callers-et-callees-doivent-être-proches">Les &quot;callers&quot; et &quot;callees&quot; doivent être proches</h3>
+<p>Si une fonction en appelle une autre, gardez ces fonctions verticalement fermées
+dans le fichier source. Idéalement, gardez le &quot;caller&quot; juste au-dessus du &quot;callee&quot;.
+Nous avons tendance à lire le code de haut en bas, comme un journal. Pour cette raison,
+faites lire votre code de cette façon.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> employee: Employee</span>)</span> {
   }
@@ -390,7 +405,7 @@ We tend to read code from top-to-bottom, like a newspaper. Because of this, make
 <span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
 review.review();
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> employee: Employee</span>)</span> {
   }
@@ -428,36 +443,36 @@ review.review();
 <span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
 review.review();
 </code></pre>
-<h3 id="organize-imports">Organize imports</h3>
-<p>With clean and easy to read import statements you can quickly see the dependencies of current code. Make sure you apply following good practices for <code>import</code> statements:</p>
+<h3 id="organiser-les-importations-imports">Organiser les importations (imports)</h3>
+<p>Avec des instructions d&apos;importation propres et faciles à lire, vous pouvez rapidement
+voir les dépendances du code actuel. Assurez-vous d&apos;appliquer les bonnes pratiques
+suivantes pour les instructions <code>import</code>:</p>
 <ul>
-<li>Import statements should be alphabetized and grouped.</li>
-<li>Unused imports should be removed.</li>
-<li>Named imports must be alphabetized (i.e. <code>import {A, B, C} from &apos;foo&apos;;</code>)</li>
-<li>Import sources must be alphabetized within groups, i.e.: <code>import * as foo from &apos;a&apos;; import * as bar from &apos;b&apos;;</code></li>
-<li>Prefer using <code>import type</code> instead of <code>import</code> when importing only types from a file to avoid dependency cycles, as these imports are erased at runtime</li>
-<li>Groups of imports are delineated by blank lines.</li>
-<li>Groups must respect following order:<ul>
-<li>Polyfills (i.e. <code>import &apos;reflect-metadata&apos;;</code>)</li>
-<li>Node builtin modules (i.e. <code>import fs from &apos;fs&apos;;</code>)</li>
-<li>external modules (i.e. <code>import { query } from &apos;itiriri&apos;;</code>)</li>
-<li>internal modules (i.e <code>import { UserService } from &apos;src/services/userService&apos;;</code>)</li>
-<li>modules from a parent directory (i.e. <code>import foo from &apos;../foo&apos;; import qux from &apos;../../foo/qux&apos;;</code>)</li>
-<li>modules from the same or a sibling&apos;s directory (i.e. <code>import bar from &apos;./bar&apos;; import baz from &apos;./bar/baz&apos;;</code>)</li>
+<li>Les déclarations d&apos;importation doivent être classées par ordre alphabétique et regroupées.</li>
+<li>Les importations non utilisées doivent être supprimées.</li>
+<li>Les importations nommées doivent être classées par ordre alphabétique (c&apos;est-à-dire <code>import {A, B, C} de &apos;foo&apos;;</code>)</li>
+<li>Les sources d&apos;importation doivent être classées par ordre alphabétique dans les groupes, c&apos;est-à-dire: <code>import * as foo from &apos;a&apos;; importer *comme barre de &apos;b&apos;;</code></li>
+<li>Les groupes d&apos;importations sont délimités par des lignes blanches.</li>
+<li>Les groupes doivent respecter l&apos;ordre suivant:<ul>
+<li>Polyfills (c&apos;est-à-dire <code>import &apos;reflect-metadata&apos;;</code>)</li>
+<li>modules intégrés de Node (c&apos;est-à-dire <code>import fs from &apos;fs&apos;;</code>)</li>
+<li>modules externes (c&apos;est-à-dire <code>import {query} from &apos;itiriri&apos;;</code>)</li>
+<li>modules internes (c&apos;est-à-dire <code>import {UserService} from &apos;src/services/userService&apos;;</code>)</li>
+<li>modules d&apos;un répertoire parent (c&apos;est-à-dire <code>import foo from &apos;../foo&apos;; import qux from &apos;../../foo/qux&apos;;</code>)</li>
+<li>modules du même répertoire ou d&apos;un répertoire frère (c&apos;est-à-dire <code>import bar from &apos;./bar&apos;; import baz from &apos;./bar/baz&apos;;</code>)</li>
 </ul>
 </li>
 </ul>
-<p><strong>Bad:</strong></p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../types/typeDefinition&apos;</span>;
 <span class="hljs-keyword">import</span> { AttributeTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/attribute&apos;</span>;
-<span class="hljs-keyword">import</span> { Customer, Credentials } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/types&apos;</span>;
 <span class="hljs-keyword">import</span> { ApiCredentials, Adapters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./common/api/authorization&apos;</span>;
 <span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { ConfigPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./plugins/config/configPlugin&apos;</span>;
 <span class="hljs-keyword">import</span> { BindingScopeEnum, Container } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;inversify&apos;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
 
 <span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
@@ -465,18 +480,18 @@ review.review();
 
 <span class="hljs-keyword">import</span> { AttributeTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/attribute&apos;</span>;
 <span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../types/typeDefinition&apos;</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { Customer, Credentials } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/types&apos;</span>;
 
 <span class="hljs-keyword">import</span> { ApiCredentials, Adapters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./common/api/authorization&apos;</span>;
 <span class="hljs-keyword">import</span> { ConfigPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./plugins/config/configPlugin&apos;</span>;
 </code></pre>
-<h3 id="use-typescript-aliases">Use typescript aliases</h3>
-<p>Create prettier imports by defining the paths and baseUrl properties in the compilerOptions section in the <code>tsconfig.json</code></p>
-<p>This will avoid long relative paths when doing imports.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="utiliser-des-alias-de-typescript">Utiliser des alias de TypeScript</h3>
+<p>Créez des importations plus jolies en définissant les chemins d&apos;accès et les attributs
+baseUrl dans la section <code>compilerOptions</code> dans le fichier <code>tsconfig.json</code>.</p>
+<p>Cela évitera de longs chemins relatifs lors des importations.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { UserService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../../services/UserService&apos;</span>;
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { UserService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@services/UserService&apos;</span>;
 </code></pre>
 <pre><code class="lang-js"><span class="hljs-comment">// tsconfig.json</span>
@@ -518,12 +533,12 @@ review.review();
 
             
                 
-                <a href="ERROR-HANDLING.html" class="navigation navigation-prev " aria-label="Previous page: Error Handling">
+                <a href="ERROR-HANDLING.html" class="navigation navigation-prev " aria-label="Previous page: Gestion des erreurs">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="COMMENTS.html" class="navigation navigation-next " aria-label="Next page: Comments">
+                <a href="COMMENTS.html" class="navigation navigation-next " aria-label="Next page: Commentaires">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -534,7 +549,7 @@ review.review();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Formatting","level":"1.10","depth":1,"next":{"title":"Comments","level":"1.11","depth":1,"path":"COMMENTS.md","ref":"./COMMENTS.md","articles":[]},"previous":{"title":"Error Handling","level":"1.9","depth":1,"path":"ERROR-HANDLING.md","ref":"./ERROR-HANDLING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"FORMATTING.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Formatage du Code","level":"1.10","depth":1,"next":{"title":"Commentaires","level":"1.11","depth":1,"path":"COMMENTS.md","ref":"./COMMENTS.md","articles":[]},"previous":{"title":"Gestion des erreurs","level":"1.9","depth":1,"path":"ERROR-HANDLING.md","ref":"./ERROR-HANDLING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"FORMATTING.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -584,27 +599,27 @@ review.review();
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

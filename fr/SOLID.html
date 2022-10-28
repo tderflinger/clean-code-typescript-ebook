@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="fr" >
     <head>
         <meta charset="UTF-8">
         <title>SOLID · Clean Code TypeScript</title>
@@ -11,20 +11,20 @@
         
         
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    <link rel="stylesheet" href="../gitbook/style.css">
 
     
             
                 
-                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -52,8 +52,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
     <link rel="next" href="TESTING.html" />
@@ -70,7 +70,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="Tapez pour rechercher" />
 </div>
 
             
@@ -119,7 +119,7 @@
                 <a href="FUNCTIONS.html">
             
                     
-                    Functions
+                    Fonctions
             
                 </a>
             
@@ -132,7 +132,7 @@
                 <a href="OBJECTS-DATA.html">
             
                     
-                    Objects and Data Structures
+                    Objets et Structures de Données
             
                 </a>
             
@@ -171,7 +171,7 @@
                 <a href="TESTING.html">
             
                     
-                    Testing
+                    Tests
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="CONCURRENCY.html">
             
                     
-                    Concurrency
+                    Opérations Concurrentes
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="ERROR-HANDLING.html">
             
                     
-                    Error Handling
+                    Gestion des erreurs
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="FORMATTING.html">
             
                     
-                    Formatting
+                    Formatage du Code
             
                 </a>
             
@@ -223,7 +223,7 @@
                 <a href="COMMENTS.html">
             
                     
-                    Comments
+                    Commentaires
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="TRANSLATIONS.html">
             
                     
-                    Translations
+                    Traductions
             
                 </a>
             
@@ -249,7 +249,7 @@
                 <a href="LICENSE.html">
             
                     
-                    License
+                    Licence
             
                 </a>
             
@@ -264,7 +264,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            Publié avec HonKit
         </a>
     </li>
 </ul>
@@ -303,9 +303,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="solid">SOLID</h2>
-<h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)</h3>
-<p>As stated in Clean Code, &quot;There should never be more than one reason for a class to change&quot;. It&apos;s tempting to jam-pack a class with a lot of functionality, like when you can only take one suitcase on your flight. The issue with this is that your class won&apos;t be conceptually cohesive and it will give it many reasons to change. Minimizing the amount of time you need to change a class is important. It&apos;s important because if too much functionality is in one class and you modify a piece of it, it can be difficult to understand how that will affect other dependent modules in your codebase.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="principe-de-responsabilité-unique-ou-single-responsibility-principle-srp">Principe de Responsabilité Unique ou &quot;Single Responsibility Principle (SRP)&quot;</h3>
+<p>Comme indiqué dans Clean Code, &quot;Il ne devrait jamais y avoir plus d&apos;une raison
+pour qu&apos;une classe change&quot;. Il est tentant d&apos;emballer une classe avec beaucoup
+de fonctionnalités, comme lorsque vous ne pouvez emporter qu&apos;une seule valise
+pendant votre vol. Le problème avec cela est que votre classe ne sera pas
+conceptuellement cohérente et cela lui donnera de nombreuses raisons de changer.
+Il est important de minimiser le nombre de fois que vous devez changer de classe.
+C&apos;est important car si trop de fonctionnalités sont dans une classe et que vous
+en modifiez une partie, il peut être difficile de comprendre comment cela affectera
+les autres modules dépendants de votre base de code.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSettings</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> user: User</span>)</span> {
   }
@@ -321,7 +329,7 @@
   }
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserAuth</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> user: User</span>)</span> {
   }
@@ -346,9 +354,12 @@
   }
 }
 </code></pre>
-<h3 id="openclosed-principle-ocp">Open/Closed Principle (OCP)</h3>
-<p>As stated by Bertrand Meyer, &quot;software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.&quot; What does that mean though? This principle basically states that you should allow users to add new functionalities without changing existing code.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="principe-ouvertfermé-ou-openclosed-principle-ocp">Principe ouvert/fermé ou &quot;Open/Closed Principle (OCP)&quot;</h3>
+<p>Comme l&apos;a déclaré Bertrand Meyer, &quot;les entités logicielles (classes, modules,
+fonctions, etc.) devraient être ouvertes pour extension, mais fermées pour modification.&quot;
+Mais qu&apos;est-ce que cela signifie? Ce principe stipule essentiellement que vous
+devez autoriser les utilisateurs à ajouter de nouvelles fonctionnalités sans modifier le code existant.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AjaxAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-built_in">super</span>();
@@ -388,7 +399,7 @@
   <span class="hljs-comment">// request and return promise</span>
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> </span>{
   <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">async</span> request&lt;T&gt;(url: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">Promise</span>&lt;T&gt;;
 
@@ -429,10 +440,19 @@
   }
 }
 </code></pre>
-<h3 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)</h3>
-<p>This is a scary term for a very simple concept. It&apos;s formally defined as &quot;If S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e., objects of type S may substitute objects of type T) without altering any of the desirable properties of that program (correctness, task performed, etc.).&quot; That&apos;s an even scarier definition.  </p>
-<p>The best explanation for this is if you have a parent class and a child class, then the parent class and child class can be used interchangeably without getting incorrect results. This might still be confusing, so let&apos;s take a look at the classic Square-Rectangle example. Mathematically, a square is a rectangle, but if you model it using the &quot;is-a&quot; relationship via inheritance, you quickly get into trouble.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="principe-de-substitution-de-liskov-ou-liskov-substitution-principle-lsp">Principe de substitution de Liskov ou &quot;Liskov Substitution Principle (LSP)&quot;</h3>
+<p>C&apos;est un terme effrayant pour un concept très simple. Il est formellement défini
+comme &quot;Si S est un sous-type de T, alors les objets de type T peuvent être remplacés
+par des objets de type S (c&apos;est-à-dire que les objets de type S peuvent remplacer
+des objets de type T) sans altérer aucune des attributs souhaitables de ce
+programme (correction, tâche effectuée, etc.).&quot; C&apos;est une définition encore plus effrayante.</p>
+<p>La meilleure explication est que si vous avez une classe parent et une classe enfant,
+la classe parent et la classe enfant peuvent être utilisées de manière interchangeable
+sans obtenir de résultats incorrects. Cela peut encore prêter à confusion, alors
+jetons un coup d&apos;œil à l&apos;exemple classique de Square-Rectangle. Mathématiquement,
+un carré est un rectangle, mais si vous le modélisez en utilisant la relation &quot;is-a&quot;
+via l&apos;héritage, vous rencontrez rapidement des problèmes.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span> </span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">
     <span class="hljs-keyword">protected</span> width: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>,
@@ -490,7 +510,7 @@
 <span class="hljs-keyword">const</span> rectangles = [<span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Square()];
 renderLargeRectangles(rectangles);
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span> </span>{
   setColor(color: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">this</span> {
     <span class="hljs-comment">// ...</span>
@@ -535,10 +555,14 @@ renderLargeRectangles(rectangles);
 <span class="hljs-keyword">const</span> shapes = [<span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Square(<span class="hljs-number">5</span>)];
 renderLargeShapes(shapes);
 </code></pre>
-<h3 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)</h3>
-<p>ISP states that &quot;Clients should not be forced to depend upon interfaces that they do not use.&quot;. This principle is very much related to the Single Responsibility Principle.
-What it really means is that you should always design your abstractions in a way that the clients that are using the exposed methods do not get the whole pie instead. That also include imposing the clients with the burden of implementing methods that they don’t actually need.</p>
-<p><strong>Bad:</strong></p>
+<h3 id="principe-de-ségrégation-dinterface-ou-interface-segregation-principle-isp">Principe de ségrégation d&apos;interface ou &quot;Interface Segregation Principle (ISP)&quot;</h3>
+<p>L&apos;ISP déclare que &quot;les clients ne devraient pas être obligés de dépendre d&apos;interfaces
+qu&apos;ils n&apos;utilisent pas.&quot;. Ce principe est très lié au principe de responsabilité unique.
+Ce que cela signifie vraiment, c&apos;est que vous devez toujours concevoir vos abstractions
+de manière à ce que les clients qui utilisent les méthodes exposées n&apos;obtiennent
+pas tout le gâteau à la place. Cela implique également d&apos;imposer aux clients la
+charge de mettre en œuvre des méthodes dont ils n&apos;ont pas réellement besoin.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">interface</span> SmartPrinter {
   print();
   fax();
@@ -548,7 +572,7 @@ What it really means is that you should always design your abstractions in a way
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllInOnePrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">SmartPrinter</span> </span>{
   <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-comment">// ...</span>
-  }  
+  }
 
   <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-comment">// ...</span>
@@ -562,7 +586,7 @@ What it really means is that you should always design your abstractions in a way
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EconomicPrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">SmartPrinter</span> </span>{
   <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-comment">// ...</span>
-  }  
+  }
 
   <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Fax not supported.&apos;</span>);
@@ -573,7 +597,7 @@ What it really means is that you should always design your abstractions in a way
   }
 }
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Printer {
   print();
 }
@@ -589,7 +613,7 @@ What it really means is that you should always design your abstractions in a way
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AllInOnePrinter</span> <span class="hljs-title">implements</span> <span class="hljs-title">Printer</span>, <span class="hljs-title">Fax</span>, <span class="hljs-title">Scanner</span> </span>{
   <span class="hljs-function"><span class="hljs-title">print</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-comment">// ...</span>
-  }  
+  }
 
   <span class="hljs-function"><span class="hljs-title">fax</span>(<span class="hljs-params"></span>)</span> {
     <span class="hljs-comment">// ...</span>
@@ -606,17 +630,25 @@ What it really means is that you should always design your abstractions in a way
   }
 }
 </code></pre>
-<h3 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)</h3>
-<p>This principle states two essential things:</p>
+<h3 id="principe-dinversion-de-dépendance-ou-dependency-inversion-principle-dip">Principe d&apos;inversion de dépendance ou &quot;Dependency Inversion Principle (DIP)&quot;</h3>
+<p>Ce principe énonce deux choses essentielles:</p>
 <ol>
-<li><p>High-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
-</li>
-<li><p>Abstractions should not depend upon details. Details should depend on abstractions.</p>
-</li>
+<li>Les modules de haut niveau ne doivent pas dépendre de modules de bas niveau.
+Les deux devraient dépendre d&apos;abstractions.</li>
+<li>Les abstractions ne devraient pas dépendre des détails. Les détails doivent
+dépendre des abstractions.</li>
 </ol>
-<p>This can be hard to understand at first, but if you&apos;ve worked with Angular, you&apos;ve seen an implementation of this principle in the form of Dependency Injection (DI). While they are not identical concepts, DIP keeps high-level modules from knowing the details of its low-level modules and setting them up. It can accomplish this through DI. A huge benefit of this is that it reduces the coupling between modules. Coupling is a very bad development pattern because it makes your code hard to refactor.  </p>
-<p>DIP is usually achieved by a using an inversion of control (IoC) container. An example of a powerful IoC container for TypeScript is <a href="https://www.npmjs.com/package/inversify" target="_blank">InversifyJs</a></p>
-<p><strong>Bad:</strong></p>
+<p>Cela peut être difficile à comprendre au début, mais si vous avez travaillé avec
+Angular, vous avez vu une implémentation de ce principe sous la forme d&apos;une
+injection de dépendance (DI). Bien qu&apos;il ne s&apos;agisse pas de concepts identiques,
+DIP empêche les modules de haut niveau de connaître les détails de ses modules de
+bas niveau et de les configurer. Il peut y parvenir grâce à DI. Un énorme avantage
+de ceci est qu&apos;il réduit le couplage entre les modules. Le couplage est un très
+mauvais schéma de développement car il rend votre code difficile à refactoriser.</p>
+<p>Le DIP est généralement obtenu en utilisant un conteneur d&apos;inversion de contrôle
+(IoC). Un exemple de conteneur IoC puissant pour TypeScript est
+<a href="https://www.npmjs.com/package/inversify" target="_blank">InversifyJs</a>.</p>
+<p><strong>Mal:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { readFile <span class="hljs-keyword">as</span> readFileCb } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
 
@@ -646,9 +678,9 @@ What it really means is that you should always design your abstractions in a way
 
 <span class="hljs-comment">// ...</span>
 <span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader();
-<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
+<span class="hljs-keyword">await</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
 </code></pre>
-<p><strong>Good:</strong></p>
+<p><strong>Bien:</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">import</span> { readFile <span class="hljs-keyword">as</span> readFileCb } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
 <span class="hljs-keyword">import</span> { promisify } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;util&apos;</span>;
 
@@ -687,11 +719,11 @@ What it really means is that you should always design your abstractions in a way
 
 <span class="hljs-comment">// ...</span>
 <span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader(<span class="hljs-keyword">new</span> XmlFormatter());
-<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
+<span class="hljs-keyword">await</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.xml&apos;</span>);
 
 <span class="hljs-comment">// or if we had to read a json report</span>
 <span class="hljs-keyword">const</span> reader = <span class="hljs-keyword">new</span> ReportReader(<span class="hljs-keyword">new</span> JsonFormatter());
-<span class="hljs-keyword">const</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.json&apos;</span>);
+<span class="hljs-keyword">await</span> report = <span class="hljs-keyword">await</span> reader.read(<span class="hljs-string">&apos;report.json&apos;</span>);
 </code></pre>
 
                                 
@@ -725,7 +757,7 @@ What it really means is that you should always design your abstractions in a way
                 </a>
                 
                 
-                <a href="TESTING.html" class="navigation navigation-next " aria-label="Next page: Testing">
+                <a href="TESTING.html" class="navigation navigation-next " aria-label="Next page: Tests">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -736,7 +768,7 @@ What it really means is that you should always design your abstractions in a way
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SOLID","level":"1.6","depth":1,"next":{"title":"Testing","level":"1.7","depth":1,"path":"TESTING.md","ref":"./TESTING.md","articles":[]},"previous":{"title":"Classes","level":"1.5","depth":1,"path":"CLASSES.md","ref":"./CLASSES.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","gitbook":"*"},"file":{"path":"SOLID.md","mtime":"2022-09-27T19:25:19.809Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-09-27T19:25:29.958Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SOLID","level":"1.6","depth":1,"next":{"title":"Tests","level":"1.7","depth":1,"path":"TESTING.md","ref":"./TESTING.md","articles":[]},"previous":{"title":"Classes","level":"1.5","depth":1,"path":"CLASSES.md","ref":"./CLASSES.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"fr","gitbook":"*"},"file":{"path":"SOLID.md","mtime":"2022-10-28T19:57:44.202Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"fr"}});
         });
     </script>
 </div>
@@ -786,27 +818,27 @@ What it really means is that you should always design your abstractions in a way
             book.classList.remove("honkit-cloak");
         }
     </script>
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
     
         
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

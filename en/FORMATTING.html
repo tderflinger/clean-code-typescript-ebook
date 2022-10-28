@@ -1,0 +1,613 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Formatting · Clean Code TypeScript</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="COMMENTS.html" />
+    
+    
+    <link rel="prev" href="ERROR-HANDLING.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="VARIABLES.html">
+            
+                <a href="VARIABLES.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="FUNCTIONS.html">
+            
+                <a href="FUNCTIONS.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="OBJECTS-DATA.html">
+            
+                <a href="OBJECTS-DATA.html">
+            
+                    
+                    Objects and Data Structures
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="CLASSES.html">
+            
+                <a href="CLASSES.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="SOLID.html">
+            
+                <a href="SOLID.html">
+            
+                    
+                    SOLID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="CONCURRENCY.html">
+            
+                <a href="CONCURRENCY.html">
+            
+                    
+                    Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ERROR-HANDLING.html">
+            
+                <a href="ERROR-HANDLING.html">
+            
+                    
+                    Error Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="FORMATTING.html">
+            
+                <a href="FORMATTING.html">
+            
+                    
+                    Formatting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="COMMENTS.html">
+            
+                <a href="COMMENTS.html">
+            
+                    
+                    Comments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="TRANSLATIONS.html">
+            
+                <a href="TRANSLATIONS.html">
+            
+                    
+                    Translations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Formatting</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="formatting">Formatting</h2>
+<p>Formatting is subjective. Like many rules herein, there is no hard and fast rule that you must follow. The main point is <em>DO NOT ARGUE</em> over formatting. There are tons of tools to automate this. Use one! It&apos;s a waste of time and money for engineers to argue over formatting. The general rule to follow is <em>keep consistent formatting rules</em>.  </p>
+<p>For TypeScript there is a powerful tool called <a href="https://typescript-eslint.io/" target="_blank">ESLint</a>. It&apos;s a static analysis tool that can help you improve dramatically the readability and maintainability of your code. There are ready to use ESLint configurations that you can reference in your projects:</p>
+<ul>
+<li><p><a href="https://www.npmjs.com/package/eslint-config-airbnb-typescript" target="_blank">ESLint Config Airbnb</a> - Airbnb style guide</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/eslint-plugin-base-style-config" target="_blank">ESLint Base Style Config</a> - a Set of Essential ESLint rules for JS, TS and React</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/eslint-config-prettier" target="_blank">ESLint + Prettier</a> - lint rules for <a href="https://github.com/prettier/prettier" target="_blank">Prettier</a> code formatter</p>
+</li>
+</ul>
+<p>Refer also to this great <a href="https://basarat.gitbook.io/typescript/styleguide" target="_blank">TypeScript StyleGuide and Coding Conventions</a> source.</p>
+<h3 id="migrating-from-tslint-to-eslint">Migrating from TSLint to ESLint</h3>
+<p>If you are looking for help in migrating from TSLint to ESLint, you can check out this project: <a href="https://github.com/typescript-eslint/tslint-to-eslint-config" target="_blank">https://github.com/typescript-eslint/tslint-to-eslint-config</a></p>
+<h3 id="use-consistent-capitalization">Use consistent capitalization</h3>
+<p>Capitalization tells you a lot about your variables, functions, etc. These rules are subjective, so your team can choose whatever they want. The point is, no matter what you all choose, just <em>be consistent</em>.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">const</span> daysInMonth = <span class="hljs-number">30</span>;
+
+<span class="hljs-keyword">const</span> songs = [<span class="hljs-string">&apos;Back In Black&apos;</span>, <span class="hljs-string">&apos;Stairway to Heaven&apos;</span>, <span class="hljs-string">&apos;Hey Jude&apos;</span>];
+<span class="hljs-keyword">const</span> Artists = [<span class="hljs-string">&apos;ACDC&apos;</span>, <span class="hljs-string">&apos;Led Zeppelin&apos;</span>, <span class="hljs-string">&apos;The Beatles&apos;</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eraseDatabase</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">restore_database</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-keyword">type</span> animal = { <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-keyword">type</span> Container = { <span class="hljs-comment">/* ... */</span> }
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">const</span> DAYS_IN_MONTH = <span class="hljs-number">30</span>;
+
+<span class="hljs-keyword">const</span> SONGS = [<span class="hljs-string">&apos;Back In Black&apos;</span>, <span class="hljs-string">&apos;Stairway to Heaven&apos;</span>, <span class="hljs-string">&apos;Hey Jude&apos;</span>];
+<span class="hljs-keyword">const</span> ARTISTS = [<span class="hljs-string">&apos;ACDC&apos;</span>, <span class="hljs-string">&apos;Led Zeppelin&apos;</span>, <span class="hljs-string">&apos;The Beatles&apos;</span>];
+
+<span class="hljs-keyword">const</span> discography = getArtistDiscography(<span class="hljs-string">&apos;ACDC&apos;</span>);
+<span class="hljs-keyword">const</span> beatlesSongs = SONGS.filter(<span class="hljs-function">(<span class="hljs-params">song</span>) =&gt;</span> isBeatlesSong(song));
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eraseDatabase</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">restoreDatabase</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-keyword">type</span> Animal = { <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-keyword">type</span> Container = { <span class="hljs-comment">/* ... */</span> }
+</code></pre>
+<p>Prefer using <code>PascalCase</code> for class, interface, type and namespace names.<br>Prefer using <code>camelCase</code> for variables, functions and class members.
+Prefer using capitalized <code>SNAKE_CASE</code> for constants.</p>
+<h3 id="function-callers-and-callees-should-be-close">Function callers and callees should be close</h3>
+<p>If a function calls another, keep those functions vertically close in the source file. Ideally, keep the caller right above the callee.
+We tend to read code from top-to-bottom, like a newspaper. Because of this, make your code read that way.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> employee: Employee</span>)</span> {
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">lookupPeers</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee.id, <span class="hljs-string">&apos;peers&apos;</span>);
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">lookupManager</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&apos;manager&apos;</span>);
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getPeerReviews</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> peers = <span class="hljs-built_in">this</span>.lookupPeers();
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">review</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.getPeerReviews();
+    <span class="hljs-built_in">this</span>.getManagerReview();
+    <span class="hljs-built_in">this</span>.getSelfReview();
+
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getManagerReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> manager = <span class="hljs-built_in">this</span>.lookupManager();
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getSelfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
+review.review();
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> employee: Employee</span>)</span> {
+  }
+
+  <span class="hljs-function"><span class="hljs-title">review</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.getPeerReviews();
+    <span class="hljs-built_in">this</span>.getManagerReview();
+    <span class="hljs-built_in">this</span>.getSelfReview();
+
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getPeerReviews</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> peers = <span class="hljs-built_in">this</span>.lookupPeers();
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">lookupPeers</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee.id, <span class="hljs-string">&apos;peers&apos;</span>);
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getManagerReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> manager = <span class="hljs-built_in">this</span>.lookupManager();
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">lookupManager</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&apos;manager&apos;</span>);
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-title">getSelfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
+review.review();
+</code></pre>
+<h3 id="organize-imports">Organize imports</h3>
+<p>With clean and easy to read import statements you can quickly see the dependencies of current code. Make sure you apply following good practices for <code>import</code> statements:</p>
+<ul>
+<li>Import statements should be alphabetized and grouped.</li>
+<li>Unused imports should be removed.</li>
+<li>Named imports must be alphabetized (i.e. <code>import {A, B, C} from &apos;foo&apos;;</code>)</li>
+<li>Import sources must be alphabetized within groups, i.e.: <code>import * as foo from &apos;a&apos;; import * as bar from &apos;b&apos;;</code></li>
+<li>Prefer using <code>import type</code> instead of <code>import</code> when importing only types from a file to avoid dependency cycles, as these imports are erased at runtime</li>
+<li>Groups of imports are delineated by blank lines.</li>
+<li>Groups must respect following order:<ul>
+<li>Polyfills (i.e. <code>import &apos;reflect-metadata&apos;;</code>)</li>
+<li>Node builtin modules (i.e. <code>import fs from &apos;fs&apos;;</code>)</li>
+<li>external modules (i.e. <code>import { query } from &apos;itiriri&apos;;</code>)</li>
+<li>internal modules (i.e <code>import { UserService } from &apos;src/services/userService&apos;;</code>)</li>
+<li>modules from a parent directory (i.e. <code>import foo from &apos;../foo&apos;; import qux from &apos;../../foo/qux&apos;;</code>)</li>
+<li>modules from the same or a sibling&apos;s directory (i.e. <code>import bar from &apos;./bar&apos;; import baz from &apos;./bar/baz&apos;;</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../types/typeDefinition&apos;</span>;
+<span class="hljs-keyword">import</span> { AttributeTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/attribute&apos;</span>;
+<span class="hljs-keyword">import</span> { Customer, Credentials } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/types&apos;</span>;
+<span class="hljs-keyword">import</span> { ApiCredentials, Adapters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./common/api/authorization&apos;</span>;
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
+<span class="hljs-keyword">import</span> { ConfigPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./plugins/config/configPlugin&apos;</span>;
+<span class="hljs-keyword">import</span> { BindingScopeEnum, Container } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;inversify&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;reflect-metadata&apos;</span>;
+
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;fs&apos;</span>;
+<span class="hljs-keyword">import</span> { BindingScopeEnum, Container } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;inversify&apos;</span>;
+
+<span class="hljs-keyword">import</span> { AttributeTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/attribute&apos;</span>;
+<span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../types/typeDefinition&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { Customer, Credentials } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../model/types&apos;</span>;
+
+<span class="hljs-keyword">import</span> { ApiCredentials, Adapters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./common/api/authorization&apos;</span>;
+<span class="hljs-keyword">import</span> { ConfigPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./plugins/config/configPlugin&apos;</span>;
+</code></pre>
+<h3 id="use-typescript-aliases">Use typescript aliases</h3>
+<p>Create prettier imports by defining the paths and baseUrl properties in the compilerOptions section in the <code>tsconfig.json</code></p>
+<p>This will avoid long relative paths when doing imports.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { UserService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../../services/UserService&apos;</span>;
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { UserService } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@services/UserService&apos;</span>;
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// tsconfig.json</span>
+...
+  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+    ...
+    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;src&quot;</span>,
+    <span class="hljs-string">&quot;paths&quot;</span>: {
+      <span class="hljs-string">&quot;@services&quot;</span>: [<span class="hljs-string">&quot;services/*&quot;</span>]
+    }
+    ...
+  }
+...
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ERROR-HANDLING.html" class="navigation navigation-prev " aria-label="Previous page: Error Handling">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="COMMENTS.html" class="navigation navigation-next " aria-label="Next page: Comments">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Formatting","level":"1.10","depth":1,"next":{"title":"Comments","level":"1.11","depth":1,"path":"COMMENTS.md","ref":"./COMMENTS.md","articles":[]},"previous":{"title":"Error Handling","level":"1.9","depth":1,"path":"ERROR-HANDLING.md","ref":"./ERROR-HANDLING.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Clean Code TypeScript","language":"en","gitbook":"*"},"file":{"path":"FORMATTING.md","mtime":"2022-10-28T19:57:44.198Z","type":"markdown"},"gitbook":{"version":"4.0.0","time":"2022-10-28T19:57:59.682Z"},"basePath":".","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
